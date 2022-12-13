@@ -61,6 +61,7 @@ namespace CNPM_QLTienAn
             this.txtPassword.Properties.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(323, 28);
             this.txtPassword.TabIndex = 6;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // btnDangNhap
             // 
@@ -94,6 +95,7 @@ namespace CNPM_QLTienAn
             this.txtUsername.Properties.Appearance.Options.UseFont = true;
             this.txtUsername.Size = new System.Drawing.Size(323, 28);
             this.txtUsername.TabIndex = 5;
+            this.txtUsername.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUsername_KeyDown);
             // 
             // labelControl3
             // 
@@ -130,7 +132,7 @@ namespace CNPM_QLTienAn
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtUsername);
             this.Name = "FormLogin";
-            this.Text = "FormLogin";
+            this.Text = "Đăng Nhập";
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUsername.Properties)).EndInit();
             this.ResumeLayout(false);

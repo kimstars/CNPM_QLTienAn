@@ -38,6 +38,9 @@
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -169,6 +172,7 @@
     <Compile Include="Models\DonVi.cs" />
     <Compile Include="Models\DS_HocVien.cs" />
     <Compile Include="Models\HocVien.cs" />
+    <Compile Include="Models\HocVien_DangKyNghi.cs" />
     <Compile Include="Models\Model_QLTA.cs" />
     <Compile Include="Models\NhaBep_CatComChuaThanhToan.cs" />
     <Compile Include="Models\NhaBep_FindToCreateThanhToan.cs" />
@@ -191,6 +195,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin_CanBo.resx">
+      <DependentUpon>Admin_CanBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin_DangNhap.resx">
+      <DependentUpon>Admin_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin_DonVi.resx">
+      <DependentUpon>Admin_DonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin_HocVien.resx">
+      <DependentUpon>Admin_HocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Admin_TieuChuanAn.resx">
+      <DependentUpon>Admin_TieuChuanAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DaiDoi_ChoPheDuyet.resx">
+      <DependentUpon>DaiDoi_ChoPheDuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DaiDoi_DaHuy.resx">
+      <DependentUpon>DaiDoi_DaHuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DaiDoi_DaPheDuyet.resx">
+      <DependentUpon>DaiDoi_DaPheDuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DaiDoi_NhapDanhSach.resx">
+      <DependentUpon>DaiDoi_NhapDanhSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TieuDoan_ChoPheDuyet.resx">
+      <DependentUpon>TieuDoan_ChoPheDuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TieuDoan_DaHuy.resx">
+      <DependentUpon>TieuDoan_DaHuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TieuDoan_DaPheDuyet.resx">
+      <DependentUpon>TieuDoan_DaPheDuyet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
