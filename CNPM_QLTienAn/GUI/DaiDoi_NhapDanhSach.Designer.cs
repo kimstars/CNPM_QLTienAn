@@ -30,12 +30,12 @@ namespace CNPM_QLTienAn.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiDoi_NhapDanhSach));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.chbRN_Toi = new DevExpress.XtraEditors.CheckEdit();
             this.dtpRN_NgayNghi = new DevExpress.XtraEditors.DateEdit();
             this.btnRN_Them = new DevExpress.XtraEditors.SimpleButton();
@@ -187,7 +187,7 @@ namespace CNPM_QLTienAn.GUI
             this.pnRaNgoai.Controls.Add(this.tbRN_Lop);
             this.pnRaNgoai.Controls.Add(this.tbRN_HoTen);
             this.pnRaNgoai.Controls.Add(this.label6);
-            this.pnRaNgoai.Location = new System.Drawing.Point(10, 69);
+            this.pnRaNgoai.Location = new System.Drawing.Point(10, 72);
             this.pnRaNgoai.Name = "pnRaNgoai";
             this.pnRaNgoai.Size = new System.Drawing.Size(471, 246);
             this.pnRaNgoai.TabIndex = 3;
@@ -276,6 +276,7 @@ namespace CNPM_QLTienAn.GUI
             this.btnTT_Them.Size = new System.Drawing.Size(94, 29);
             this.btnTT_Them.TabIndex = 2;
             this.btnTT_Them.Text = "Thêm";
+            this.btnTT_Them.Click += new System.EventHandler(this.btnTT_Them_Click);
             // 
             // dtpTT_NgayTra
             // 
@@ -425,11 +426,12 @@ namespace CNPM_QLTienAn.GUI
             // btnDel
             // 
             this.btnDel.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
             this.btnDel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDel.Name = "btnDel";
             this.btnDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // radioGroup1
             // 
@@ -446,6 +448,7 @@ namespace CNPM_QLTienAn.GUI
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Ra ngoài", true, null, "rbRaNgoai")});
             this.radioGroup1.Size = new System.Drawing.Size(257, 31);
             this.radioGroup1.TabIndex = 1;
+            this.radioGroup1.SelectedIndexChanged += new System.EventHandler(this.radioGroup1_SelectedIndexChanged);
             // 
             // gridColumn7
             // 
@@ -489,6 +492,7 @@ namespace CNPM_QLTienAn.GUI
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // colMaHocVien
             // 
@@ -762,6 +766,7 @@ namespace CNPM_QLTienAn.GUI
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DaiDoi_NhapDanhSach";
             this.Size = new System.Drawing.Size(981, 760);
+            this.Load += new System.EventHandler(this.DaiDoi_NhapDanhSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chbRN_Toi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpRN_NgayNghi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpRN_NgayNghi.Properties)).EndInit();

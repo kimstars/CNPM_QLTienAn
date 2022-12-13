@@ -23,6 +23,12 @@ namespace CNPM_QLTienAn.GUI
 
 
         }
+
+        public void ReloadAll()
+        {
+            DaiDoi_DaHuy_Load(this, new EventArgs());
+        }
+
         public Model_QLTA db = new Model_QLTA();
 
         private void DaiDoi_DaHuy_Load(object sender, EventArgs e)

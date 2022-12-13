@@ -20,6 +20,11 @@ namespace CNPM_QLTienAn.GUI
         }
         public Model_QLTA db = new Model_QLTA();
 
+        public void ReloadAll()
+        {
+            DaiDoi_DaPheDuyet_Load(this, new EventArgs());
+        }
+
         private void DaiDoi_DaPheDuyet_Load(object sender, EventArgs e)
         {
             CanBo cbo = db.CanBoes.Where(s => s.MaCanBo == FormMain.maCB).FirstOrDefault();

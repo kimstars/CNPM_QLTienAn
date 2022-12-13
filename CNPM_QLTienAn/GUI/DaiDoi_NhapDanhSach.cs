@@ -28,6 +28,19 @@ namespace CNPM_QLTienAn.GUI
         int mahvTT = 0;
         int mahvRN = 0;
 
+        public void ReloadAll()
+        {
+            DaiDoi_NhapDanhSach_Load(this, new EventArgs());
+        }
+
+        private void DaiDoi_NhapDanhSach_Load(object sender, EventArgs e)
+        {
+            gridControl2.DataSource = listDK;
+            CanBo cb = db.CanBoes.Where(s => s.MaCanBo == FormMain.maCB).FirstOrDefault();
+            DonVi dv = db.DonVis.Where(s => s.MaDonVi == cb.MaDonVi).FirstOrDefault();
+            gridControl1.DataSource = db.HocViens.Where(s => s.DonVi.TenDonVi == dv.TenDonVi).ToList();
+        }
+
         private void SetDefaultState()
         {
             listDK.Clear();
@@ -112,6 +125,94 @@ namespace CNPM_QLTienAn.GUI
 
         private void btnRN_Them_Click(object sender, EventArgs e)
         {
+            if (mahvRN == 0)
+            {
+                MessageBox.Show("Chưa chọn học viên");
+                return;
+            }
+
+            if (chbRN_Sang.Checked == false && chbRN_Trua.Checked == false && chbRN_Toi.Checked == false)
+            {
+                MessageBox.Show("Chưa chọn buổi cắt cơm");
+                return;
+            }
+
+            HocVien_DangKyNghi hv_dk = new HocVien_DangKyNghi();
+            hv_dk.MaHocVien = mahvRN;
+            hv_dk.HoTen = tbRN_HoTen.Text;
+            hv_dk.Lop = tbRN_Lop.Text;
+            hv_dk.NgayNghi = Convert.ToDateTime(dtpRN_NgayNghi.EditValue);
+            hv_dk.Sang = chbRN_Sang.Checked ? 1 : 0;
+            hv_dk.Trua = chbRN_Trua.Checked ? 1 : 0;
+            hv_dk.Toi = chbRN_Toi.Checked ? 1 : 0;
+            listDK.Add(hv_dk);
+            gridControl2.DataSource = null;
+            gridControl2.DataSource = listDK;
+        }
+
+        private void chkEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            int row = gridView2.FocusedRowHandle;
+            string colname = gridView2.Columns[gridView2.FocusedColumn.VisibleIndex].FieldName;
+            int currVal = (int)gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[colname]);
+            switch (colname)
+            {
+                case "Sang":
+                    listDK[row].Sang = currVal == 0 ? 1 : 0;
+                    break;
+                case "Trua":
+                    listDK[row].Trua = currVal == 0 ? 1 : 0;
+                    break;
+                case "Toi":
+                    listDK[row].Toi = currVal == 0 ? 1 : 0;
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            if (radioGroup1.SelectedIndex == 0)
+            {
+                mahvTT = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, "MaHocVien"));
+                tbTT_HoTen.Text = gridView1.GetRowCellValue(e.RowHandle, "HoTen").ToString();
+                tbTT_Lop.Text = gridView1.GetRowCellValue(e.RowHandle, "Lop").ToString();
+            }
+            else
+            {
+                mahvRN = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, "MaHocVien"));
+                tbRN_HoTen.Text = gridView1.GetRowCellValue(e.RowHandle, "HoTen").ToString();
+                tbRN_Lop.Text = gridView1.GetRowCellValue(e.RowHandle, "Lop").ToString();
+            }
+        }
+
+
+        private void radioGroup1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RadioGroup edit = sender as RadioGroup;
+            if (edit.SelectedIndex == 0)
+            {
+                pnRaNgoai.Visible = false;
+                pnTranhThu.Visible = true;
+            }
+            else
+            {
+                pnRaNgoai.Visible = true;
+                pnTranhThu.Visible = false;
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            int index = gridView2.FocusedRowHandle;
+            listDK.RemoveAt(index);
+            gridControl2.DataSource = null;
+            gridControl2.DataSource = listDK;
+
+        }
+
+        private void btnTT_Them_Click(object sender, EventArgs e)
+        {
             if (mahvTT == 0)
             {
                 MessageBox.Show("Chưa chọn học viên");
@@ -163,27 +264,6 @@ namespace CNPM_QLTienAn.GUI
             listDK.Add(hv_dk2);
             gridControl2.DataSource = null;
             gridControl2.DataSource = listDK;
-        }
-
-        private void chkEdit_CheckedChanged(object sender, EventArgs e)
-        {
-            int row = gridView2.FocusedRowHandle;
-            string colname = gridView2.Columns[gridView2.FocusedColumn.VisibleIndex].FieldName;
-            int currVal = (int)gridView2.GetRowCellValue(gridView2.FocusedRowHandle, gridView2.Columns[colname]);
-            switch (colname)
-            {
-                case "Sang":
-                    listDK[row].Sang = currVal == 0 ? 1 : 0;
-                    break;
-                case "Trua":
-                    listDK[row].Trua = currVal == 0 ? 1 : 0;
-                    break;
-                case "Toi":
-                    listDK[row].Toi = currVal == 0 ? 1 : 0;
-                    break;
-                default:
-                    break;
-            }
         }
     }
 }
