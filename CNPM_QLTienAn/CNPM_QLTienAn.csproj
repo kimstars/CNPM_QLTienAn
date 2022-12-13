@@ -36,9 +36,19 @@
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,14 +60,139 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Admin_CanBo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin_CanBo.Designer.cs">
+      <DependentUpon>Admin_CanBo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin_DangNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin_DangNhap.Designer.cs">
+      <DependentUpon>Admin_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin_DonVi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin_DonVi.Designer.cs">
+      <DependentUpon>Admin_DonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin_HocVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin_HocVien.Designer.cs">
+      <DependentUpon>Admin_HocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Admin_TieuChuanAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Admin_TieuChuanAn.Designer.cs">
+      <DependentUpon>Admin_TieuChuanAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_ChoPheDuyet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_ChoPheDuyet.Designer.cs">
+      <DependentUpon>DaiDoi_ChoPheDuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_DaHuy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_DaHuy.Designer.cs">
+      <DependentUpon>DaiDoi_DaHuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_DaPheDuyet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_DaPheDuyet.Designer.cs">
+      <DependentUpon>DaiDoi_DaPheDuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_NhapDanhSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_NhapDanhSach.Designer.cs">
+      <DependentUpon>DaiDoi_NhapDanhSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhaBep_QuanLyDanhSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhaBep_QuanLyDanhSach.Designer.cs">
+      <DependentUpon>NhaBep_QuanLyDanhSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhaBep_ThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhaBep_ThanhToan.Designer.cs">
+      <DependentUpon>NhaBep_ThanhToan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\NhaBep_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhaBep_ThongKe.Designer.cs">
+      <DependentUpon>NhaBep_ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TieuDoan_ChoPheDuyet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\TieuDoan_ChoPheDuyet.Designer.cs">
+      <DependentUpon>TieuDoan_ChoPheDuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TieuDoan_DaHuy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\TieuDoan_DaHuy.Designer.cs">
+      <DependentUpon>TieuDoan_DaHuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TieuDoan_DaPheDuyet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\TieuDoan_DaPheDuyet.Designer.cs">
+      <DependentUpon>TieuDoan_DaPheDuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CanBo.cs" />
+    <Compile Include="Models\ChiTietNghi.cs" />
+    <Compile Include="Models\DangKyNghi.cs" />
+    <Compile Include="Models\DanhSachNghi.cs" />
+    <Compile Include="Models\DonVi.cs" />
+    <Compile Include="Models\DS_HocVien.cs" />
+    <Compile Include="Models\HocVien.cs" />
+    <Compile Include="Models\Model_QLTA.cs" />
+    <Compile Include="Models\NhaBep_CatComChuaThanhToan.cs" />
+    <Compile Include="Models\NhaBep_FindToCreateThanhToan.cs" />
+    <Compile Include="Models\NhaBep_LichSuCatComLop.cs" />
+    <Compile Include="Models\NhaBep_ListCatCom.cs" />
+    <Compile Include="Models\Object_ThanhToan.cs" />
+    <Compile Include="Models\ThanhToan.cs" />
+    <Compile Include="Models\TieuChuanAn.cs" />
+    <Compile Include="Models\TTDangNhap.cs" />
+    <Compile Include="Models\View_ChiTietChoPheDuyet.cs" />
+    <Compile Include="Models\View_ChiTietDaHuy.cs" />
+    <Compile Include="Models\View_ChiTietDaXacNhan.cs" />
+    <Compile Include="Models\View_ChoPheDuyet.cs" />
+    <Compile Include="Models\View_DaHuy.cs" />
+    <Compile Include="Models\View_DaXacNhan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -67,6 +202,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,5 +216,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
