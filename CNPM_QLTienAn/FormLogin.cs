@@ -22,35 +22,47 @@ namespace CNPM_QLTienAn
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-           
-                string hashedPass = HashPass(txtPassword.Text);
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
 
-                if (db.TTDangNhaps.Any(s => s.TaiKhoan == txtUsername.Text && s.MatKhau == hashedPass))
+            if(username == "")
+            {
+                MessageBox.Show("Hãy nhập tên đăng nhập !", "Error");
+                return;
+            }
+            if (password == "")
+            {
+                MessageBox.Show("Hãy nhập mật khẩu !", "Error");
+                return;
+            }
+            string hashedPass = HashPass(txtPassword.Text);
+
+            if (db.TTDangNhaps.Any(s => s.TaiKhoan == txtUsername.Text && s.MatKhau == hashedPass))
+            {
+                TTDangNhap acc = db.TTDangNhaps.Where(s => s.TaiKhoan == txtUsername.Text && s.MatKhau == hashedPass).FirstOrDefault();
+                CanBo cb = db.CanBoes.Where(s => s.MaDangNhap == acc.MaDangNhap).FirstOrDefault();
+
+                FormMain fm;
+                if (cb == null)
                 {
-                    TTDangNhap acc = db.TTDangNhaps.Where(s => s.TaiKhoan == txtUsername.Text && s.MatKhau == hashedPass).FirstOrDefault();
-                    CanBo cb = db.CanBoes.Where(s => s.MaDangNhap == acc.MaDangNhap).FirstOrDefault();
-
-                    FormMain fm;
-                    if (cb == null)
-                    {
-                        fm = new FormMain(acc.QuyenTruyCap);
-                    }
-                    else fm = new FormMain(cb.MaCanBo, acc.QuyenTruyCap);
-
-                    this.Hide();
-                    fm.ShowDialog();
-                    if (!fm.IsDisposed)
-                    {
-                        txtPassword.Text = "";
-                        txtUsername.Focus();
-                        this.Show();
-                    }
+                    fm = new FormMain(acc.QuyenTruyCap);
                 }
-                else
+                else fm = new FormMain(cb.MaCanBo, acc.QuyenTruyCap);
+
+                this.Hide();
+                fm.ShowDialog();
+                if (!fm.IsDisposed)
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                    txtPassword.Text = "";
+                    txtUsername.Focus();
+                    this.Show();
                 }
-            
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+            }
+
         }
 
 

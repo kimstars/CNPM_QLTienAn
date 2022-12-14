@@ -57,7 +57,7 @@ namespace CNPM_QLTienAn.GUI
                 ds_ChoPheDuyet.Reverse();
                 dgvDSCho.DataSource = ds_ChoPheDuyet;
 
-                mads = (int)dgvDSCho_View.GetFocusedRowCellValue("MaDS");
+                mads = ds_ChoPheDuyet[0].MaDS;
                 MaDS_XacNhan = mads.ToString();
                 var ds_CTChoPheDuyet = (from ds in db.DanhSachNghis
                                         join dkn in db.DangKyNghis on ds.MaDS equals dkn.MaDS

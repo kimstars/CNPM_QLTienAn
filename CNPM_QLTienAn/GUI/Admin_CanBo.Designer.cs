@@ -84,6 +84,7 @@ namespace CNPM_QLTienAn.GUI
             this.txtNSCB_CT = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Thêm)).BeginInit();
@@ -117,6 +118,7 @@ namespace CNPM_QLTienAn.GUI
             ((System.ComponentModel.ISupportInitialize)(this.txtNSCB_CT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -141,22 +143,21 @@ namespace CNPM_QLTienAn.GUI
             // 
             // groupControl3
             // 
-            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl3.Controls.Add(this.Thêm);
-            this.groupControl3.Location = new System.Drawing.Point(328, 284);
+            this.groupControl3.Location = new System.Drawing.Point(334, 6);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(650, 476);
+            this.groupControl3.Size = new System.Drawing.Size(644, 476);
             this.groupControl3.TabIndex = 9;
             this.groupControl3.Text = "Chỉnh sửa thông tin ";
             // 
             // Thêm
             // 
             this.Thêm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Thêm.Location = new System.Drawing.Point(2, 17);
+            this.Thêm.Location = new System.Drawing.Point(2, 28);
             this.Thêm.Name = "Thêm";
             this.Thêm.SelectedTabPage = this.xtraTabPage1;
-            this.Thêm.Size = new System.Drawing.Size(646, 457);
+            this.Thêm.Size = new System.Drawing.Size(640, 446);
             this.Thêm.TabIndex = 0;
             this.Thêm.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -178,14 +179,14 @@ namespace CNPM_QLTienAn.GUI
             this.xtraTabPage1.Controls.Add(this.label16);
             this.xtraTabPage1.Controls.Add(this.btnThemCB);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(644, 432);
+            this.xtraTabPage1.Size = new System.Drawing.Size(638, 415);
             this.xtraTabPage1.Text = "Thêm";
             // 
             // dateThemNgaySinhCB
             // 
             this.dateThemNgaySinhCB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateThemNgaySinhCB.EditValue = null;
-            this.dateThemNgaySinhCB.Location = new System.Drawing.Point(27, 114);
+            this.dateThemNgaySinhCB.Location = new System.Drawing.Point(24, 114);
             this.dateThemNgaySinhCB.Name = "dateThemNgaySinhCB";
             this.dateThemNgaySinhCB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -199,7 +200,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.txtThemMaDNCB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThemMaDNCB.EditValue = "";
-            this.txtThemMaDNCB.Location = new System.Drawing.Point(27, 289);
+            this.txtThemMaDNCB.Location = new System.Drawing.Point(24, 289);
             this.txtThemMaDNCB.Name = "txtThemMaDNCB";
             this.txtThemMaDNCB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtThemMaDNCB.Size = new System.Drawing.Size(354, 22);
@@ -209,7 +210,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 260);
+            this.label3.Location = new System.Drawing.Point(24, 260);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 26;
@@ -219,7 +220,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.txtThemMaDVCB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThemMaDVCB.EditValue = "";
-            this.txtThemMaDVCB.Location = new System.Drawing.Point(27, 353);
+            this.txtThemMaDVCB.Location = new System.Drawing.Point(24, 353);
             this.txtThemMaDVCB.Name = "txtThemMaDVCB";
             this.txtThemMaDVCB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtThemMaDVCB.Size = new System.Drawing.Size(354, 22);
@@ -229,7 +230,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 324);
+            this.label4.Location = new System.Drawing.Point(25, 324);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 17);
             this.label4.TabIndex = 24;
@@ -239,7 +240,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.txtThemChucVuCB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThemChucVuCB.EditValue = "";
-            this.txtThemChucVuCB.Location = new System.Drawing.Point(27, 230);
+            this.txtThemChucVuCB.Location = new System.Drawing.Point(24, 230);
             this.txtThemChucVuCB.Name = "txtThemChucVuCB";
             this.txtThemChucVuCB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtThemChucVuCB.Size = new System.Drawing.Size(354, 22);
@@ -249,7 +250,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 210);
+            this.label5.Location = new System.Drawing.Point(24, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 17);
             this.label5.TabIndex = 22;
@@ -259,7 +260,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.txtThemCapBacCB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThemCapBacCB.EditValue = "";
-            this.txtThemCapBacCB.Location = new System.Drawing.Point(27, 175);
+            this.txtThemCapBacCB.Location = new System.Drawing.Point(24, 175);
             this.txtThemCapBacCB.Name = "txtThemCapBacCB";
             this.txtThemCapBacCB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtThemCapBacCB.Size = new System.Drawing.Size(354, 22);
@@ -269,7 +270,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 155);
+            this.label14.Location = new System.Drawing.Point(24, 155);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 17);
             this.label14.TabIndex = 20;
@@ -279,7 +280,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(27, 94);
+            this.label15.Location = new System.Drawing.Point(24, 94);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 17);
             this.label15.TabIndex = 18;
@@ -289,7 +290,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.txtThemTenCB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtThemTenCB.EditValue = "";
-            this.txtThemTenCB.Location = new System.Drawing.Point(27, 49);
+            this.txtThemTenCB.Location = new System.Drawing.Point(24, 49);
             this.txtThemTenCB.Name = "txtThemTenCB";
             this.txtThemTenCB.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtThemTenCB.Size = new System.Drawing.Size(354, 22);
@@ -299,7 +300,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(27, 29);
+            this.label16.Location = new System.Drawing.Point(24, 29);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(49, 17);
             this.label16.TabIndex = 16;
@@ -309,7 +310,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.btnThemCB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemCB.Location = new System.Drawing.Point(462, 136);
+            this.btnThemCB.Location = new System.Drawing.Point(456, 136);
             this.btnThemCB.Name = "btnThemCB";
             this.btnThemCB.Size = new System.Drawing.Size(110, 110);
             this.btnThemCB.TabIndex = 14;
@@ -334,7 +335,7 @@ namespace CNPM_QLTienAn.GUI
             this.xtraTabPage2.Controls.Add(this.label18);
             this.xtraTabPage2.Controls.Add(this.btnSuaCB);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(644, 432);
+            this.xtraTabPage2.Size = new System.Drawing.Size(644, 415);
             this.xtraTabPage2.Text = "Sửa";
             // 
             // dateSuaNgaySinhCB
@@ -591,10 +592,10 @@ namespace CNPM_QLTienAn.GUI
             // dgvTTCB
             // 
             this.dgvTTCB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTTCB.Location = new System.Drawing.Point(2, 17);
+            this.dgvTTCB.Location = new System.Drawing.Point(2, 28);
             this.dgvTTCB.MainView = this.dgvTTCB_View;
             this.dgvTTCB.Name = "dgvTTCB";
-            this.dgvTTCB.Size = new System.Drawing.Size(977, 259);
+            this.dgvTTCB.Size = new System.Drawing.Size(977, 392);
             this.dgvTTCB.TabIndex = 0;
             this.dgvTTCB.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvTTCB_View});
@@ -605,7 +606,7 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(981, 278);
+            this.groupControl1.Size = new System.Drawing.Size(981, 422);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Thông tin cán bộ";
             // 
@@ -696,7 +697,6 @@ namespace CNPM_QLTienAn.GUI
             // 
             // groupControl2
             // 
-            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl2.Controls.Add(this.txtMDNCB_C);
             this.groupControl2.Controls.Add(this.label12);
             this.groupControl2.Controls.Add(this.txtMDVCB_CT);
@@ -709,7 +709,7 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl2.Controls.Add(this.label1);
             this.groupControl2.Controls.Add(this.txtTenCB_CT);
             this.groupControl2.Controls.Add(this.label10);
-            this.groupControl2.Location = new System.Drawing.Point(0, 284);
+            this.groupControl2.Location = new System.Drawing.Point(3, 5);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.groupControl2.Size = new System.Drawing.Size(325, 473);
@@ -726,13 +726,22 @@ namespace CNPM_QLTienAn.GUI
             this.label2.TabIndex = 7;
             this.label2.Text = "Cấp bậc";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupControl2);
+            this.panel1.Controls.Add(this.groupControl3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 422);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(981, 338);
+            this.panel1.TabIndex = 10;
+            // 
             // Admin_CanBo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupControl3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupControl1);
-            this.Controls.Add(this.groupControl2);
             this.Name = "Admin_CanBo";
             this.Size = new System.Drawing.Size(981, 760);
             this.Load += new System.EventHandler(this.Admin_CanBo_Load);
@@ -772,6 +781,7 @@ namespace CNPM_QLTienAn.GUI
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -833,5 +843,6 @@ namespace CNPM_QLTienAn.GUI
         private DevExpress.XtraEditors.TextEdit txtNSCB_CT;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

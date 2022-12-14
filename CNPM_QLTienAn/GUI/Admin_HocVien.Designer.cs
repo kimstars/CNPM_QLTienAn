@@ -530,7 +530,7 @@ namespace CNPM_QLTienAn.GUI
             this.xtraTabPage1.Controls.Add(this.label21);
             this.xtraTabPage1.Controls.Add(this.btnThemHV);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(623, 500);
+            this.xtraTabPage1.Size = new System.Drawing.Size(623, 483);
             this.xtraTabPage1.Text = "Thêm";
             // 
             // dateThemHV
@@ -702,10 +702,10 @@ namespace CNPM_QLTienAn.GUI
             // Thêm
             // 
             this.Thêm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Thêm.Location = new System.Drawing.Point(2, 17);
+            this.Thêm.Location = new System.Drawing.Point(2, 28);
             this.Thêm.Name = "Thêm";
             this.Thêm.SelectedTabPage = this.xtraTabPage1;
-            this.Thêm.Size = new System.Drawing.Size(625, 525);
+            this.Thêm.Size = new System.Drawing.Size(625, 514);
             this.Thêm.TabIndex = 0;
             this.Thêm.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -731,7 +731,7 @@ namespace CNPM_QLTienAn.GUI
             this.xtraTabPage2.Controls.Add(this.label24);
             this.xtraTabPage2.Controls.Add(this.btnSuaHV);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(623, 500);
+            this.xtraTabPage2.Size = new System.Drawing.Size(623, 483);
             this.xtraTabPage2.Text = "Sửa";
             // 
             // txtSuaLopHV
@@ -827,6 +827,7 @@ namespace CNPM_QLTienAn.GUI
             this.Controls.Add(this.gridcontrolhv);
             this.Name = "Admin_HocVien";
             this.Size = new System.Drawing.Size(1019, 758);
+            this.Load += new System.EventHandler(this.Admin_HocVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtChucVuHV_CT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCapBacHV_CT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLopHV_CT.Properties)).EndInit();

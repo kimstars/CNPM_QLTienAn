@@ -30,12 +30,12 @@ namespace CNPM_QLTienAn.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiDoi_NhapDanhSach));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.chbRN_Toi = new DevExpress.XtraEditors.CheckEdit();
             this.dtpRN_NgayNghi = new DevExpress.XtraEditors.DateEdit();
             this.btnRN_Them = new DevExpress.XtraEditors.SimpleButton();
@@ -138,7 +138,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbRN_Toi.Location = new System.Drawing.Point(289, 151);
             this.chbRN_Toi.Name = "chbRN_Toi";
             this.chbRN_Toi.Properties.Caption = "Tối";
-            this.chbRN_Toi.Size = new System.Drawing.Size(50, 21);
+            this.chbRN_Toi.Size = new System.Drawing.Size(50, 24);
             this.chbRN_Toi.TabIndex = 3;
             // 
             // dtpRN_NgayNghi
@@ -170,7 +170,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbRN_Sang.Location = new System.Drawing.Point(121, 151);
             this.chbRN_Sang.Name = "chbRN_Sang";
             this.chbRN_Sang.Properties.Caption = "Sáng";
-            this.chbRN_Sang.Size = new System.Drawing.Size(61, 21);
+            this.chbRN_Sang.Size = new System.Drawing.Size(61, 24);
             this.chbRN_Sang.TabIndex = 3;
             // 
             // pnRaNgoai
@@ -199,7 +199,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbRN_Trua.Location = new System.Drawing.Point(204, 151);
             this.chbRN_Trua.Name = "chbRN_Trua";
             this.chbRN_Trua.Properties.Caption = "Trưa";
-            this.chbRN_Trua.Size = new System.Drawing.Size(62, 21);
+            this.chbRN_Trua.Size = new System.Drawing.Size(62, 24);
             this.chbRN_Trua.TabIndex = 3;
             // 
             // label2
@@ -256,7 +256,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbTT_ToiTra.Location = new System.Drawing.Point(386, 156);
             this.chbTT_ToiTra.Name = "chbTT_ToiTra";
             this.chbTT_ToiTra.Properties.Caption = "Tối";
-            this.chbTT_ToiTra.Size = new System.Drawing.Size(50, 21);
+            this.chbTT_ToiTra.Size = new System.Drawing.Size(50, 24);
             this.chbTT_ToiTra.TabIndex = 3;
             // 
             // chbTT_ToiNghi
@@ -265,7 +265,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbTT_ToiNghi.Location = new System.Drawing.Point(386, 93);
             this.chbTT_ToiNghi.Name = "chbTT_ToiNghi";
             this.chbTT_ToiNghi.Properties.Caption = "Tối";
-            this.chbTT_ToiNghi.Size = new System.Drawing.Size(50, 21);
+            this.chbTT_ToiNghi.Size = new System.Drawing.Size(50, 24);
             this.chbTT_ToiNghi.TabIndex = 3;
             // 
             // btnTT_Them
@@ -297,7 +297,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbTT_TruaTra.Location = new System.Drawing.Point(321, 156);
             this.chbTT_TruaTra.Name = "chbTT_TruaTra";
             this.chbTT_TruaTra.Properties.Caption = "Trưa";
-            this.chbTT_TruaTra.Size = new System.Drawing.Size(62, 21);
+            this.chbTT_TruaTra.Size = new System.Drawing.Size(62, 24);
             this.chbTT_TruaTra.TabIndex = 3;
             // 
             // dtpTT_NgayNghi
@@ -319,7 +319,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbTT_TruaNghi.Location = new System.Drawing.Point(321, 93);
             this.chbTT_TruaNghi.Name = "chbTT_TruaNghi";
             this.chbTT_TruaNghi.Properties.Caption = "Trưa";
-            this.chbTT_TruaNghi.Size = new System.Drawing.Size(62, 21);
+            this.chbTT_TruaNghi.Size = new System.Drawing.Size(62, 24);
             this.chbTT_TruaNghi.TabIndex = 3;
             // 
             // chbTT_SangTra
@@ -328,7 +328,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbTT_SangTra.Location = new System.Drawing.Point(251, 156);
             this.chbTT_SangTra.Name = "chbTT_SangTra";
             this.chbTT_SangTra.Properties.Caption = "Sáng";
-            this.chbTT_SangTra.Size = new System.Drawing.Size(61, 21);
+            this.chbTT_SangTra.Size = new System.Drawing.Size(61, 24);
             this.chbTT_SangTra.TabIndex = 3;
             // 
             // tbTT_Lop
@@ -346,7 +346,7 @@ namespace CNPM_QLTienAn.GUI
             this.chbTT_SangNghi.Location = new System.Drawing.Point(251, 93);
             this.chbTT_SangNghi.Name = "chbTT_SangNghi";
             this.chbTT_SangNghi.Properties.Caption = "Sáng";
-            this.chbTT_SangNghi.Size = new System.Drawing.Size(61, 21);
+            this.chbTT_SangNghi.Size = new System.Drawing.Size(61, 24);
             this.chbTT_SangNghi.TabIndex = 3;
             // 
             // tbTT_HoTen
@@ -426,9 +426,9 @@ namespace CNPM_QLTienAn.GUI
             // btnDel
             // 
             this.btnDel.AutoHeight = false;
-            editorButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions4.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.btnDel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDel.Name = "btnDel";
             this.btnDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -466,10 +466,10 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.gridControl1.DataSource = this.hocVienBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 17);
+            this.gridControl1.Location = new System.Drawing.Point(2, 28);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(477, 729);
+            this.gridControl1.Size = new System.Drawing.Size(477, 718);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

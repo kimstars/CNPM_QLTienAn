@@ -202,5 +202,10 @@ namespace CNPM_QLTienAn.GUI
             return true;
         }
 
+        private void Admin_HocVien_Load(object sender, EventArgs e)
+        {
+            var tthv1 = db.HocViens.ToList();
+            dgvTTHV.DataSource = tthv1;
+        }
     }
 }

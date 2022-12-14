@@ -29,14 +29,14 @@ namespace CNPM_QLTienAn.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram5 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series5 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView5 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle5 = new DevExpress.XtraCharts.ChartTitle();
-            DevExpress.XtraCharts.XYDiagram xyDiagram6 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series6 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.LineSeriesView lineSeriesView6 = new DevExpress.XtraCharts.LineSeriesView();
-            DevExpress.XtraCharts.ChartTitle chartTitle6 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView2 = new DevExpress.XtraCharts.LineSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
             this.txtLuot = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTongTien = new DevExpress.XtraEditors.TextEdit();
@@ -50,17 +50,17 @@ namespace CNPM_QLTienAn.GUI
             ((System.ComponentModel.ISupportInitialize)(this.txtLuot.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpCuoi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpCuoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDau.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtLuot
@@ -104,23 +104,23 @@ namespace CNPM_QLTienAn.GUI
             this.chartControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            xyDiagram5.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram5.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl2.Diagram = xyDiagram5;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl2.Diagram = xyDiagram1;
             this.chartControl2.Legend.Name = "Default Legend";
             this.chartControl2.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl2.Location = new System.Drawing.Point(-1, 382);
             this.chartControl2.Name = "chartControl2";
-            series5.Name = "BDLuot";
-            series5.View = lineSeriesView5;
+            series1.Name = "BDLuot";
+            series1.View = lineSeriesView1;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series5};
+        series1};
             this.chartControl2.Size = new System.Drawing.Size(981, 371);
             this.chartControl2.TabIndex = 15;
-            chartTitle5.Font = new System.Drawing.Font("Tahoma", 9F);
-            chartTitle5.Text = "Tổng số lượt cắt cơm";
+            chartTitle1.Font = new System.Drawing.Font("Tahoma", 9F);
+            chartTitle1.Text = "Tổng số lượt cắt cơm";
             this.chartControl2.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle5});
+            chartTitle1});
             // 
             // dtpCuoi
             // 
@@ -173,24 +173,24 @@ namespace CNPM_QLTienAn.GUI
             this.chartControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            xyDiagram6.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram6.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram6;
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram2;
             this.chartControl1.Legend.Name = "Default Legend";
             this.chartControl1.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl1.Location = new System.Drawing.Point(-1, 38);
             this.chartControl1.Name = "chartControl1";
-            series6.Name = "BDTien";
-            series6.View = lineSeriesView6;
+            series2.Name = "BDTien";
+            series2.View = lineSeriesView2;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series6};
+        series2};
             this.chartControl1.Size = new System.Drawing.Size(982, 346);
             this.chartControl1.TabIndex = 10;
-            chartTitle6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartTitle6.Text = "Tổng số tiền ăn đã thanh toán";
-            chartTitle6.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            chartTitle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartTitle2.Text = "Tổng số tiền ăn đã thanh toán";
+            chartTitle2.Visibility = DevExpress.Utils.DefaultBoolean.True;
             this.chartControl1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle6});
+            chartTitle2});
             // 
             // NhaBep_ThongKe
             // 
@@ -210,17 +210,17 @@ namespace CNPM_QLTienAn.GUI
             this.Size = new System.Drawing.Size(981, 760);
             ((System.ComponentModel.ISupportInitialize)(this.txtLuot.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpCuoi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpCuoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDau.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpDau.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(lineSeriesView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

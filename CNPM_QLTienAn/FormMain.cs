@@ -147,7 +147,7 @@ namespace CNPM_QLTienAn
                     AccordionControlElement it21 = new AccordionControlElement(ElementStyle.Item) { Text = "Quản lí học viên" };
                     AccordionControlElement it22 = new AccordionControlElement(ElementStyle.Item) { Text = "Quản lí cán bộ" };
                     AccordionControlElement it23 = new AccordionControlElement(ElementStyle.Item) { Text = "Thông tin đơn vị" };
-                    AccordionControlElement it24 = new AccordionControlElement(ElementStyle.Item) { Text = "Thông tin đơn vị" };
+                    AccordionControlElement it24 = new AccordionControlElement(ElementStyle.Item) { Text = "Quản lý tiêu chuẩn ăn" };
                     accordionControl1.Elements.AddRange(new AccordionControlElement[] { it20, it21, it22, it23, it24 });
                     accordionControl1.AllowItemSelection = true;
                     accordionControl1.ExpandAll();

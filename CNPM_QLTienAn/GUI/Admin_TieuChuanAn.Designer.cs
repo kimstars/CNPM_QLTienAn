@@ -261,10 +261,10 @@ namespace CNPM_QLTienAn.GUI
             // dgvLichSuTCA
             // 
             this.dgvLichSuTCA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLichSuTCA.Location = new System.Drawing.Point(2, 17);
+            this.dgvLichSuTCA.Location = new System.Drawing.Point(2, 28);
             this.dgvLichSuTCA.MainView = this.dgvTCA_View;
             this.dgvLichSuTCA.Name = "dgvLichSuTCA";
-            this.dgvLichSuTCA.Size = new System.Drawing.Size(970, 446);
+            this.dgvLichSuTCA.Size = new System.Drawing.Size(970, 435);
             this.dgvLichSuTCA.TabIndex = 0;
             this.dgvLichSuTCA.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvTCA_View});

@@ -185,7 +185,7 @@ namespace CNPM_QLTienAn.GUI
             this.textEdit4.Location = new System.Drawing.Point(153, 710);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit4.Size = new System.Drawing.Size(202, 24);
+            this.textEdit4.Size = new System.Drawing.Size(202, 22);
             this.textEdit4.TabIndex = 2;
             // 
             // label3
@@ -204,7 +204,7 @@ namespace CNPM_QLTienAn.GUI
             this.textEdit3.Location = new System.Drawing.Point(153, 662);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit3.Size = new System.Drawing.Size(202, 24);
+            this.textEdit3.Size = new System.Drawing.Size(202, 22);
             this.textEdit3.TabIndex = 2;
             // 
             // label2
@@ -223,7 +223,7 @@ namespace CNPM_QLTienAn.GUI
             this.textEdit2.Location = new System.Drawing.Point(153, 614);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit2.Size = new System.Drawing.Size(202, 24);
+            this.textEdit2.Size = new System.Drawing.Size(202, 22);
             this.textEdit2.TabIndex = 2;
             // 
             // textEdit1
@@ -232,7 +232,7 @@ namespace CNPM_QLTienAn.GUI
             this.textEdit1.Location = new System.Drawing.Point(153, 566);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textEdit1.Size = new System.Drawing.Size(202, 24);
+            this.textEdit1.Size = new System.Drawing.Size(202, 22);
             this.textEdit1.TabIndex = 2;
             // 
             // simpleButton1
