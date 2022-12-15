@@ -21,7 +21,7 @@ namespace CNPM_QLTienAn.Models
 
         public int? SoBuoiToi { get; set; }
 
-        public int? MaDangKy { get; set; }
+        public int MaDangKy { get; set; }
 
         public virtual DangKyNghi DangKyNghi { get; set; }
     }

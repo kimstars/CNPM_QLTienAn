@@ -97,13 +97,13 @@ namespace CNPM_QLTienAn.GUI
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 17);
+            this.gridControl2.Location = new System.Drawing.Point(2, 28);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.chkEdit});
-            this.gridControl2.Size = new System.Drawing.Size(526, 728);
+            this.gridControl2.Size = new System.Drawing.Size(526, 717);
             this.gridControl2.TabIndex = 7;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -214,11 +214,11 @@ namespace CNPM_QLTienAn.GUI
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 17);
+            this.gridControl1.Location = new System.Drawing.Point(2, 28);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(428, 728);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.Size = new System.Drawing.Size(428, 717);
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -232,7 +232,7 @@ namespace CNPM_QLTienAn.GUI
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowClick);
             // 
             // gridColumn1
             // 
@@ -242,7 +242,7 @@ namespace CNPM_QLTienAn.GUI
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 68;
+            this.gridColumn1.Width = 94;
             // 
             // gridColumn2
             // 
@@ -252,7 +252,7 @@ namespace CNPM_QLTienAn.GUI
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 102;
+            this.gridColumn2.Width = 94;
             // 
             // gridColumn3
             // 
@@ -262,7 +262,7 @@ namespace CNPM_QLTienAn.GUI
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 110;
+            this.gridColumn3.Width = 94;
             // 
             // gridColumn4
             // 
@@ -272,7 +272,7 @@ namespace CNPM_QLTienAn.GUI
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 120;
+            this.gridColumn4.Width = 94;
             // 
             // DaiDoi_DaPheDuyet
             // 

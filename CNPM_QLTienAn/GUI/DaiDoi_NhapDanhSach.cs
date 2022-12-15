@@ -14,23 +14,17 @@ namespace CNPM_QLTienAn.GUI
 {
     public partial class DaiDoi_NhapDanhSach : DevExpress.XtraEditors.XtraUserControl
     {
+        List<HocVien_DangKyNghi> listDK = new List<HocVien_DangKyNghi>();
+
+        public Model_QLTA db = new Model_QLTA();
+        int mahvTT = 0;
+        int mahvRN = 0;
         public DaiDoi_NhapDanhSach()
         {
             InitializeComponent();
             gridView1.OptionsBehavior.Editable = false;
             radioGroup1.SelectedIndex = 0;
             SetDefaultState();
-        }
-
-        List<HocVien_DangKyNghi> listDK = new List<HocVien_DangKyNghi>();
-
-        public Model_QLTA db = new Model_QLTA();
-        int mahvTT = 0;
-        int mahvRN = 0;
-
-        public void ReloadAll()
-        {
-            DaiDoi_NhapDanhSach_Load(this, new EventArgs());
         }
 
         private void DaiDoi_NhapDanhSach_Load(object sender, EventArgs e)
@@ -123,6 +117,24 @@ namespace CNPM_QLTienAn.GUI
             SetDefaultState();
         }
 
+
+        bool IsNotDupDate(HocVien_DangKyNghi hv)
+        {
+            for (int i = 0; i < listDK.Count; i++)
+            {
+
+                if (listDK[i].MaHocVien == hv.MaHocVien)
+                {
+                    if (listDK[i].NgayNghi == hv.NgayNghi)
+                    {
+                        MessageBox.Show($"Đã tồn tại đăng ký tại ngày {hv.NgayNghi.ToString("dd-MM-yyyy")}", "Error");
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         private void btnRN_Them_Click(object sender, EventArgs e)
         {
             if (mahvRN == 0)
@@ -145,9 +157,14 @@ namespace CNPM_QLTienAn.GUI
             hv_dk.Sang = chbRN_Sang.Checked ? 1 : 0;
             hv_dk.Trua = chbRN_Trua.Checked ? 1 : 0;
             hv_dk.Toi = chbRN_Toi.Checked ? 1 : 0;
-            listDK.Add(hv_dk);
-            gridControl2.DataSource = null;
-            gridControl2.DataSource = listDK;
+
+            if (IsNotDupDate(hv_dk))
+            {
+
+                listDK.Add(hv_dk);
+                gridControl2.DataSource = null;
+                gridControl2.DataSource = listDK;
+            }
         }
 
         private void chkEdit_CheckedChanged(object sender, EventArgs e)
@@ -265,5 +282,11 @@ namespace CNPM_QLTienAn.GUI
             gridControl2.DataSource = null;
             gridControl2.DataSource = listDK;
         }
+
+        public void ReloadAll()
+        {
+            DaiDoi_NhapDanhSach_Load(this, new EventArgs());
+        }
+
     }
 }

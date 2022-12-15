@@ -135,6 +135,12 @@
     <Compile Include="GUI\DaiDoi_NhapDanhSach.Designer.cs">
       <DependentUpon>DaiDoi_NhapDanhSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DaiDoi_QuanLyDanhSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_QuanLyDanhSach.Designer.cs">
+      <DependentUpon>DaiDoi_QuanLyDanhSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NhaBep_QuanLyDanhSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DaiDoi_NhapDanhSach.resx">
       <DependentUpon>DaiDoi_NhapDanhSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DaiDoi_QuanLyDanhSach.resx">
+      <DependentUpon>DaiDoi_QuanLyDanhSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhaBep_QuanLyDanhSach.resx">
       <DependentUpon>NhaBep_QuanLyDanhSach.cs</DependentUpon>

@@ -35,10 +35,25 @@ namespace CNPM_QLTienAn.GUI
             {
                 if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
+                    List<DangKyNghi> dsdk = db.DangKyNghis.Where(s => s.MaDS == maDS).ToList();
+
+                    for (int i = 0; i < dsdk.Count; i++)
+                    {
+                        int madknghi = dsdk[i].MaDangKy;
+                        List<ChiTietNghi> ctn = db.ChiTietNghis.Where(s => s.MaDangKy == madknghi).ToList();
+
+                        db.ChiTietNghis.RemoveRange(ctn);
+                    }
+
+
+                    db.DangKyNghis.RemoveRange(dsdk);
+
+
                     DanhSachNghi temp = db.DanhSachNghis.Where(s => s.MaDS == maDS).FirstOrDefault();
                     db.DanhSachNghis.Remove(temp);
                     db.SaveChanges();
                     ReloadAll();
+                    MessageBox.Show("Xóa thành công");
                 }
                 return;
             }

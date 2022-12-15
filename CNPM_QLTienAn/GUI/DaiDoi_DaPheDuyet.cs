@@ -47,7 +47,9 @@ namespace CNPM_QLTienAn.GUI
             gridControl2.DataSource = null;
         }
 
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+       
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             int maDS = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, gridView1.Columns[0]));
             var chitiet = (from ds in db.DanhSachNghis
@@ -66,6 +68,5 @@ namespace CNPM_QLTienAn.GUI
                            }).ToList();
             gridControl2.DataSource = chitiet;
         }
-
     }
 }
