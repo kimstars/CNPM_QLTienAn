@@ -32,12 +32,7 @@ namespace CNPM_QLTienAn.GUI
         private int mads;
 
 
-        public void LoadDSCho()
-        {
-           
-            LoadDS1();
-        }
-
+     
 
         public void LoadDS1()
         {
@@ -54,6 +49,8 @@ namespace CNPM_QLTienAn.GUI
                                           NgayDK = ds.NgayDK,
                                           HoTen = cb.HoTen
                                       }).ToList();
+
+
                 ds_ChoPheDuyet.Reverse();
                 dgvDSCho.DataSource = ds_ChoPheDuyet;
 
@@ -83,6 +80,8 @@ namespace CNPM_QLTienAn.GUI
             catch
             { }
         }
+       
+
 
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -97,7 +96,7 @@ namespace CNPM_QLTienAn.GUI
             }
             dgvDSCho.DataSource = null;
             dgvChiTietDS1.DataSource = null;
-            LoadDSCho();
+            LoadDS1();
         }
 
         private void btnXacnhan_Click(object sender, EventArgs e)
@@ -116,13 +115,37 @@ namespace CNPM_QLTienAn.GUI
             }
             dgvDSCho.DataSource = null;
             dgvChiTietDS1.DataSource = null;
-            LoadDSCho();
+            LoadDS1();
         }
 
 
-        private void dgvDSCho_View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+      
+
+        private void dgvDSCho_View_RowClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            LoadDS1();
+
+            int maDS = Convert.ToInt32(dgvDSCho_View.GetRowCellValue(e.RowHandle, "MaDS")); ;
+
+            var ds_CTChoPheDuyet = (from ds in db.DanhSachNghis
+                                    join dkn in db.DangKyNghis on ds.MaDS equals dkn.MaDS
+                                    join ctn in db.ChiTietNghis on dkn.MaDangKy equals ctn.MaDangKy
+                                    join hv1 in db.HocViens on dkn.MaHocVien equals hv1.MaHocVien
+
+                                    where ds.MaDS == maDS
+                                    select new
+                                    {
+                                        HoTen = hv1.HoTen,
+                                        Lop = hv1.Lop,
+                                        NgayNghi = ctn.NgayNghi,
+                                        SoBuoiSang = ctn.SoBuoiSang,
+                                        SoBuoiTrua = ctn.SoBuoiTrua,
+                                        SoBuoiToi = ctn.SoBuoiToi,
+
+                                    }).ToList();
+            ds_CTChoPheDuyet.Reverse();
+            //dgvDSCho_View.OptionsBehavior.Editable = false;
+            //gridView2.OptionsBehavior.Editable = false;
+            dgvChiTietDS1.DataSource = ds_CTChoPheDuyet;
         }
     }
 }

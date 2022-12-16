@@ -218,7 +218,7 @@ namespace CNPM_QLTienAn
 
         private void It6_Click(object sender, EventArgs e)
         {
-            uc6.LoadDSCho();
+            uc6.LoadDS1();
             uc6.BringToFront();
         }
 

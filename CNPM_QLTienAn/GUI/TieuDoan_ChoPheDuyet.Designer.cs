@@ -30,12 +30,18 @@ namespace CNPM_QLTienAn.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions3 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TieuDoan_ChoPheDuyet));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.AppearanceObject appearanceObject1 = new DevExpress.Utils.AppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions6 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject21 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject22 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject23 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject24 = new DevExpress.Utils.SerializableAppearanceObject();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,12 +61,14 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dgvDSCho = new DevExpress.XtraGrid.GridControl();
             this.dgvDSCho_View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TenDonVi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NgayNghi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemButtonEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.viewChoPheDuyetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.disabledCellEvents1 = new DevExpress.Utils.Behaviors.Common.DisabledCellEvents(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -74,8 +82,8 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCho_View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewChoPheDuyetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -227,9 +235,9 @@ namespace CNPM_QLTienAn.GUI
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions3.Image")));
+            editorButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions5.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -269,73 +277,83 @@ namespace CNPM_QLTienAn.GUI
             this.dgvDSCho.MainView = this.dgvDSCho_View;
             this.dgvDSCho.Name = "dgvDSCho";
             this.dgvDSCho.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemDateEdit1});
+            this.repositoryItemButtonEdit2,
+            this.repositoryItemCheckEdit1});
             this.dgvDSCho.Size = new System.Drawing.Size(428, 550);
-            this.dgvDSCho.TabIndex = 0;
+            this.dgvDSCho.TabIndex = 8;
             this.dgvDSCho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDSCho_View});
             // 
             // dgvDSCho_View
             // 
+            this.behaviorManager1.SetBehaviors(this.dgvDSCho_View, new DevExpress.Utils.Behaviors.Behavior[] {
+            ((DevExpress.Utils.Behaviors.Behavior)(DevExpress.Utils.Behaviors.Common.DisabledCellBehavior.Create(typeof(DevExpress.XtraGrid.Extensions.GridViewDisabledCellSource), "", appearanceObject1, this.disabledCellEvents1)))});
             this.dgvDSCho_View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.TenDonVi,
-            this.NgayNghi,
-            this.gridColumn6,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
             this.dgvDSCho_View.GridControl = this.dgvDSCho;
             this.dgvDSCho_View.Name = "dgvDSCho_View";
+            this.dgvDSCho_View.OptionsBehavior.Editable = false;
             this.dgvDSCho_View.OptionsView.ShowGroupPanel = false;
-            this.dgvDSCho_View.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.dgvDSCho_View_RowClick);
-            // 
-            // TenDonVi
-            // 
-            this.TenDonVi.Caption = "Đại đội";
-            this.TenDonVi.FieldName = "TenDonVi";
-            this.TenDonVi.MinWidth = 25;
-            this.TenDonVi.Name = "TenDonVi";
-            this.TenDonVi.OptionsColumn.AllowEdit = false;
-            this.TenDonVi.Visible = true;
-            this.TenDonVi.VisibleIndex = 1;
-            this.TenDonVi.Width = 90;
-            // 
-            // NgayNghi
-            // 
-            this.NgayNghi.Caption = "Ngày đăng kí";
-            this.NgayNghi.FieldName = "NgayDK";
-            this.NgayNghi.MinWidth = 25;
-            this.NgayNghi.Name = "NgayNghi";
-            this.NgayNghi.Visible = true;
-            this.NgayNghi.VisibleIndex = 2;
-            this.NgayNghi.Width = 198;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "Mã danh sách";
-            this.gridColumn6.FieldName = "MaDS";
-            this.gridColumn6.MinWidth = 25;
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            this.gridColumn6.Width = 112;
+            this.dgvDSCho_View.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.dgvDSCho_View_RowClick_1);
             // 
             // gridColumn1
             // 
-            this.gridColumn1.Caption = "Cán bộ đại đội";
-            this.gridColumn1.FieldName = "HoTen";
+            this.gridColumn1.Caption = "Mã DS";
+            this.gridColumn1.FieldName = "MaDS";
             this.gridColumn1.MinWidth = 25;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 94;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 54;
             // 
-            // repositoryItemDateEdit1
+            // gridColumn2
             // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            this.gridColumn2.Caption = "Đại đội";
+            this.gridColumn2.FieldName = "TenDonVi";
+            this.gridColumn2.MinWidth = 25;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 91;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Ngày đăng ký";
+            this.gridColumn3.FieldName = "NgayDK";
+            this.gridColumn3.MinWidth = 25;
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 132;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Cán bộ đại đội";
+            this.gridColumn4.FieldName = "HoTen";
+            this.gridColumn4.MinWidth = 25;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 123;
+            // 
+            // repositoryItemButtonEdit2
+            // 
+            this.repositoryItemButtonEdit2.AutoHeight = false;
+            editorButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions6.Image")));
+            this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions6, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject21, serializableAppearanceObject22, serializableAppearanceObject23, serializableAppearanceObject24, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
+            this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.ValueChecked = 1;
+            this.repositoryItemCheckEdit1.ValueUnchecked = 0;
             // 
             // TieuDoan_ChoPheDuyet
             // 
@@ -357,8 +375,8 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSCho_View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewChoPheDuyetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -383,13 +401,15 @@ namespace CNPM_QLTienAn.GUI
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.BindingSource viewChoPheDuyetBindingSource;
         private DevExpress.XtraGrid.GridControl dgvDSCho;
         private DevExpress.XtraGrid.Views.Grid.GridView dgvDSCho_View;
-        private DevExpress.XtraGrid.Columns.GridColumn TenDonVi;
-        private DevExpress.XtraGrid.Columns.GridColumn NgayNghi;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        private System.Windows.Forms.BindingSource viewChoPheDuyetBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit2;
+        private DevExpress.Utils.Behaviors.Common.DisabledCellEvents disabledCellEvents1;
     }
 }
