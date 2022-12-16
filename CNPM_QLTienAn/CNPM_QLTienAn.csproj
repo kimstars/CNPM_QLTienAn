@@ -123,6 +123,12 @@
     <Compile Include="GUI\DaiDoi_DaHuy.Designer.cs">
       <DependentUpon>DaiDoi_DaHuy.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\DaiDoi_DanhSachThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_DanhSachThanhToan.Designer.cs">
+      <DependentUpon>DaiDoi_DanhSachThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DaiDoi_DaPheDuyet.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DaiDoi_DaHuy.resx">
       <DependentUpon>DaiDoi_DaHuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DaiDoi_DanhSachThanhToan.resx">
+      <DependentUpon>DaiDoi_DanhSachThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DaiDoi_DaPheDuyet.resx">
       <DependentUpon>DaiDoi_DaPheDuyet.cs</DependentUpon>

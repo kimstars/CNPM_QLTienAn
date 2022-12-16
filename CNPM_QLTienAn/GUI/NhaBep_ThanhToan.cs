@@ -69,6 +69,8 @@ namespace CNPM_QLTienAn.GUI
         private void cbbDonVi_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
+            LoadDataGridControl1(false);
+
             LoadDataIntoComboBoxLop(cbbDonVi.SelectedItem.ToString(), lstDonVi);
 
             //Clear Selected Item:
@@ -81,7 +83,7 @@ namespace CNPM_QLTienAn.GUI
         {
             ClearDataShowed();
 
-            LoadDataGridControl1();
+            LoadDataGridControl1(true);
 
             LoadDataGridControl2();
         }
@@ -113,13 +115,20 @@ namespace CNPM_QLTienAn.GUI
 
         }
 
-        private void LoadDataGridControl1()
+        private void LoadDataGridControl1(bool isLoadlop)
         {
             List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
             int maC = lstDonVi.Find(s => s.TenDonVi == cbbDonVi.SelectedItem.ToString()).MaDonVi;
-            string Lop = cbbLop.SelectedItem.ToString();
-            List<NhaBep_LichSuCatComLop> lstCatComLop =
-                db.NhaBep_LichSuCatComLop.Where(s => s.MaDonVi == maC && s.Lop == Lop && s.TrangThaiTT == 1).ToList();
+            List<NhaBep_LichSuCatComLop> lstCatComLop;
+            if (isLoadlop)
+            {
+                string Lop = cbbLop.SelectedItem.ToString();
+                lstCatComLop = db.NhaBep_LichSuCatComLop.Where(s => s.MaDonVi == maC && s.Lop == Lop && s.TrangThaiTT == 1).ToList();
+            }
+            else
+            {
+                lstCatComLop = db.NhaBep_LichSuCatComLop.Where(s => s.MaDonVi == maC && s.TrangThaiTT == 1).ToList();
+            }
 
             gridControl1.DataSource = lstCatComLop;
             gridControl1.Refresh();
@@ -330,6 +339,7 @@ namespace CNPM_QLTienAn.GUI
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             UndoingChangesDbContextLevel(db);
+
             List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
             int maC = lstDonVi.Find(s => s.TenDonVi == cbbDonVi.SelectedItem.ToString()).MaDonVi;
             string Lop = cbbLop.SelectedItem.ToString();
@@ -524,7 +534,10 @@ namespace CNPM_QLTienAn.GUI
 
 
             MessageBox.Show("Đã thanh toán thành công!");
-            reload();
+
+            LoadDataGridControl1(true);
+            gridControl2.DataSource = null;
+            //reload();
         }
 
 

@@ -20,7 +20,8 @@ namespace CNPM_QLTienAn
         DaiDoi_NhapDanhSach uc1;
         DaiDoi_ChoPheDuyet uc2;
         DaiDoi_DaPheDuyet uc3;
-        DaiDoi_DaHuy uc4;
+        //DaiDoi_DaHuy uc4;
+        DaiDoi_DanhSachThanhToan uc4;
 
         TieuDoan_ChoPheDuyet uc6;
         TieuDoan_DaPheDuyet uc7;
@@ -76,7 +77,8 @@ namespace CNPM_QLTienAn
                     uc1 = new DaiDoi_NhapDanhSach();
                     uc2 = new DaiDoi_ChoPheDuyet();
                     uc3 = new DaiDoi_DaPheDuyet();
-                    uc4 = new DaiDoi_DaHuy();
+                    //uc4 = new DaiDoi_DaHuy();
+                    uc4 = new DaiDoi_DanhSachThanhToan();
                     uc1.Dock = DockStyle.Fill;
                     uc2.Dock = DockStyle.Fill;
                     uc3.Dock = DockStyle.Fill;
@@ -222,7 +224,7 @@ namespace CNPM_QLTienAn
 
         private void It4_Click(object sender, EventArgs e)
         {
-            uc4.ReloadAll();
+            //uc4.ReloadAll();
             uc4.BringToFront();
         }
 

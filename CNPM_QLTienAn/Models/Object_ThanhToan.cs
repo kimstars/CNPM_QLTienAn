@@ -9,6 +9,7 @@ namespace CNPM_QLTienAn.Models
     class Object_ThanhToan
     {
         public int maDKy;
+        public string HoTen;
         public int maCTN;
         public int maHV;
         public int maThanhToan;
