@@ -76,8 +76,8 @@ namespace CNPM_QLTienAn.GUI
 
                                         }).ToList();
                 ds_CTChoPheDuyet.Reverse();
-                dgvDSCho_View.OptionsBehavior.Editable = false;
-                gridView2.OptionsBehavior.Editable = false;
+                //dgvDSCho_View.OptionsBehavior.Editable = false;
+                //gridView2.OptionsBehavior.Editable = false;
                 dgvChiTietDS1.DataSource = ds_CTChoPheDuyet;
             }
             catch
@@ -119,7 +119,8 @@ namespace CNPM_QLTienAn.GUI
             LoadDSCho();
         }
 
-        private void dgvDSCho_View_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+
+        private void dgvDSCho_View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             LoadDS1();
         }

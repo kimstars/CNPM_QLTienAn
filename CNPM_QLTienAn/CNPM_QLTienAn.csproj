@@ -123,17 +123,17 @@
     <Compile Include="GUI\DaiDoi_DaHuy.Designer.cs">
       <DependentUpon>DaiDoi_DaHuy.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\DaiDoi_DanhSachThanhToan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\DaiDoi_DanhSachThanhToan.Designer.cs">
-      <DependentUpon>DaiDoi_DanhSachThanhToan.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\DaiDoi_DaPheDuyet.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GUI\DaiDoi_DaPheDuyet.Designer.cs">
       <DependentUpon>DaiDoi_DaPheDuyet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_DSThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\DaiDoi_DSThanhToan.Designer.cs">
+      <DependentUpon>DaiDoi_DSThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DaiDoi_NhapDanhSach.cs">
       <SubType>UserControl</SubType>
@@ -237,11 +237,11 @@
     <EmbeddedResource Include="GUI\DaiDoi_DaHuy.resx">
       <DependentUpon>DaiDoi_DaHuy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\DaiDoi_DanhSachThanhToan.resx">
-      <DependentUpon>DaiDoi_DanhSachThanhToan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\DaiDoi_DaPheDuyet.resx">
       <DependentUpon>DaiDoi_DaPheDuyet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DaiDoi_DSThanhToan.resx">
+      <DependentUpon>DaiDoi_DSThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DaiDoi_NhapDanhSach.resx">
       <DependentUpon>DaiDoi_NhapDanhSach.cs</DependentUpon>

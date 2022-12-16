@@ -8,16 +8,16 @@ namespace CNPM_QLTienAn.Models
 {
     class Object_ThanhToan
     {
-        public int maDKy;
-        public string HoTen;
-        public int maCTN;
-        public int maHV;
-        public int maThanhToan;
-        public DateTime ngayNghi;
-        public int sang;
-        public int toi;
-        public int trua;
-        public int TienCuaCTN;
+        public int maDKy { get; set; }
+        public string HoTen { get; set; }
+        public int maCTN { get; set; }
+        public int maHV { get; set; }
+        public int maThanhToan { get; set; }
+        public DateTime ngayNghi { get; set; }
+        public int sang { get; set; }
+        public int toi { get; set; }
+        public int trua { get; set; }
+        public int TienCuaCTN { get; set; }
 
 
         public int AutoFindTCA_CALTienCTN(List<TieuChuanAn> TCA)

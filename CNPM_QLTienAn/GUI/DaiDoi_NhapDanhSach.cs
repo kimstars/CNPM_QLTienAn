@@ -251,7 +251,8 @@ namespace CNPM_QLTienAn.GUI
             hv_dk1.Sang = chbTT_SangNghi.Checked ? 1 : 0;
             hv_dk1.Trua = chbTT_TruaNghi.Checked ? 1 : 0;
             hv_dk1.Toi = chbTT_ToiNghi.Checked ? 1 : 0;
-            listDK.Add(hv_dk1);
+
+            if (IsNotDupDate(hv_dk1)) listDK.Add(hv_dk1); else return;
 
             DateTime ngayTemp = hv_dk1.NgayNghi;
             while (DateTime.Compare(ngayTemp.AddDays(1), Convert.ToDateTime(dtpTT_NgayTra.EditValue)) < 0)
@@ -265,7 +266,7 @@ namespace CNPM_QLTienAn.GUI
                 temp.Sang = 1;
                 temp.Trua = 1;
                 temp.Toi = 1;
-                listDK.Add(temp);
+                if (IsNotDupDate(temp)) listDK.Add(temp); else return;
             }
 
             HocVien_DangKyNghi hv_dk2 = new HocVien_DangKyNghi();
@@ -278,15 +279,19 @@ namespace CNPM_QLTienAn.GUI
             hv_dk2.Trua = chbTT_TruaTra.Checked ? 1 : 0;
             hv_dk2.Toi = chbTT_ToiTra.Checked ? 1 : 0;
 
-            listDK.Add(hv_dk2);
-            gridControl2.DataSource = null;
-            gridControl2.DataSource = listDK;
+
+            if (IsNotDupDate(hv_dk2))
+            {
+                listDK.Add(hv_dk2);
+                gridControl2.DataSource = null;
+                gridControl2.DataSource = listDK;
+            }
+            else return;
+
+
         }
 
-        public void ReloadAll()
-        {
-            DaiDoi_NhapDanhSach_Load(this, new EventArgs());
-        }
+       
 
     }
 }

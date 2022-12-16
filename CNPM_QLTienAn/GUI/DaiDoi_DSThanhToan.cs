@@ -10,13 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CNPM_QLTienAn.Models;
 
-
-
 namespace CNPM_QLTienAn.GUI
 {
-    public partial class DaiDoi_DanhSachThanhToan : DevExpress.XtraEditors.XtraUserControl
+    public partial class DaiDoi_DSThanhToan : DevExpress.XtraEditors.XtraUserControl
     {
-        public DaiDoi_DanhSachThanhToan()
+        public DaiDoi_DSThanhToan()
         {
             InitializeComponent();
         }
@@ -29,9 +27,8 @@ namespace CNPM_QLTienAn.GUI
         List<Object_ThanhToan> lsObjThanhtoan = new List<Object_ThanhToan>();
 
 
-        private void DaiDoi_DanhSachThanhToan_Load(object sender, EventArgs e)
+        private void DaiDoi_DSThanhToan_Load(object sender, EventArgs e)
         {
-
             lsthanhtoan = db.ThanhToans.Where(m => m.HocVien.MaDonVi == MaDonVi && m.TrangThaiTT == 1).ToList();
             List<ChiTietNghi> ctn;
 
@@ -43,15 +40,17 @@ namespace CNPM_QLTienAn.GUI
                 ctn = db.ChiTietNghis.Where(m => m.MaDangKy == dkn.MaDangKy).ToList();
 
                 int bsang, btrua, btoi; bsang = 0; btrua = 0; btoi = 0;
-                for(int i = 0; i< ctn.Count; i++)
+                DateTime start = DateTime.Today;
+                for (int i = 0; i < ctn.Count; i++)
                 {
+                    if (DateTime.Compare(start, ctn[i].NgayNghi) < 0) start = ctn[i].NgayNghi;
                     bsang += (int)ctn[i].SoBuoiSang;
                     btrua += (int)ctn[i].SoBuoiTrua;
                     btoi += (int)ctn[i].SoBuoiToi;
-                    
+
                 }
 
-                lsObjThanhtoan.Add(new Object_ThanhToan
+                Object_ThanhToan temp = new Object_ThanhToan
                 {
                     maHV = (int)item.MaHocVien,
                     HoTen = db.HocViens.Where(m => m.MaHocVien == (int)item.MaHocVien).First().HoTen,
@@ -59,13 +58,32 @@ namespace CNPM_QLTienAn.GUI
                     sang = bsang,
                     trua = btrua,
                     toi = btoi,
-                    TienCuaCTN = item.TongTien
+                    TienCuaCTN = item.TongTien,
+                    ngayNghi = start
 
-                }) ;
+                };
+
+                lsObjThanhtoan.Add(temp);
 
 
             }
             gridControl1.DataSource = lsObjThanhtoan;
+
+
+
+            //test 1 thang cb
+
+            var today = DateTime.Today;
+            var month = new DateTime(today.Year, today.Month, 1);
+            var first = month.AddMonths(-1);
+
+            MessageBox.Show(first.ToString("dd-MM-yyyy"));
+
+
+
+
+
+
         }
     }
 }
