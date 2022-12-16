@@ -77,7 +77,7 @@ namespace CNPM_QLTienAn.GUI
             var month = new DateTime(today.Year, today.Month, 1);
             var first = month.AddMonths(-1);
 
-            MessageBox.Show(first.ToString("dd-MM-yyyy"));
+            //MessageBox.Show(first.ToString("dd-MM-yyyy"));
 
 
 

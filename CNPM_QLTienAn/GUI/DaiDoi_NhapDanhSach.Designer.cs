@@ -30,12 +30,12 @@ namespace CNPM_QLTienAn.GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DaiDoi_NhapDanhSach));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.chbRN_Toi = new DevExpress.XtraEditors.CheckEdit();
             this.dtpRN_NgayNghi = new DevExpress.XtraEditors.DateEdit();
             this.btnRN_Them = new DevExpress.XtraEditors.SimpleButton();
@@ -187,7 +187,7 @@ namespace CNPM_QLTienAn.GUI
             this.pnRaNgoai.Controls.Add(this.tbRN_Lop);
             this.pnRaNgoai.Controls.Add(this.tbRN_HoTen);
             this.pnRaNgoai.Controls.Add(this.label6);
-            this.pnRaNgoai.Location = new System.Drawing.Point(10, 72);
+            this.pnRaNgoai.Location = new System.Drawing.Point(4, 65);
             this.pnRaNgoai.Name = "pnRaNgoai";
             this.pnRaNgoai.Size = new System.Drawing.Size(471, 246);
             this.pnRaNgoai.TabIndex = 3;
@@ -290,6 +290,7 @@ namespace CNPM_QLTienAn.GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpTT_NgayTra.Size = new System.Drawing.Size(188, 22);
             this.dtpTT_NgayTra.TabIndex = 4;
+            this.dtpTT_NgayTra.EditValueChanged += new System.EventHandler(this.dtpTT_NgayTra_EditValueChanged);
             // 
             // chbTT_TruaTra
             // 
@@ -417,7 +418,7 @@ namespace CNPM_QLTienAn.GUI
             this.pnTranhThu.Controls.Add(this.label7);
             this.pnTranhThu.Controls.Add(this.label5);
             this.pnTranhThu.Controls.Add(this.label3);
-            this.pnTranhThu.Location = new System.Drawing.Point(9, 72);
+            this.pnTranhThu.Location = new System.Drawing.Point(3, 68);
             this.pnTranhThu.Name = "pnTranhThu";
             this.pnTranhThu.Size = new System.Drawing.Size(472, 246);
             this.pnTranhThu.TabIndex = 4;
@@ -426,9 +427,9 @@ namespace CNPM_QLTienAn.GUI
             // btnDel
             // 
             this.btnDel.AutoHeight = false;
-            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
             this.btnDel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.btnDel.Name = "btnDel";
             this.btnDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);

@@ -340,204 +340,214 @@ namespace CNPM_QLTienAn.GUI
         {
             UndoingChangesDbContextLevel(db);
 
-            List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
-            int maC = lstDonVi.Find(s => s.TenDonVi == cbbDonVi.SelectedItem.ToString()).MaDonVi;
+            List<NhaBep_FindToCreateThanhToan> lstFindToCreate = db.NhaBep_FindToCreateThanhToan.ToList();
             string Lop = cbbLop.SelectedItem.ToString();
 
-            //FIx bug tạo thanh toán:
-            List<NhaBep_FindToCreateThanhToan> lstFindToCreate = db.NhaBep_FindToCreateThanhToan.ToList();
+            List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
+            int maC = lstDonVi.Find(s => s.TenDonVi == cbbDonVi.Text).MaDonVi;
+            List<NhaBep_CatComChuaThanhToan> lstChuaThanhToan = db.NhaBep_CatComChuaThanhToan.Where(s => s.MaDonVi == maC && s.Lop == Lop).ToList();
+            //MessageBox.Show($"so luong = {lstChuaThanhToan.Count}");
 
-            List<ThanhToan> lstThanhToanMoiThem = new List<ThanhToan>();
-            foreach (var item in lstFindToCreate)
-            {
-                ThanhToan temp = new ThanhToan();
-                temp.TongTien = 0;
-                temp.NgayTT = null;
-                temp.TrangThaiTT = -2;
-                temp.MaHocVien = item.MaHocVien;
-                db.ThanhToans.Add(temp);
-                db.SaveChanges();
 
-                lstThanhToanMoiThem.Add(temp);
-            }
-
-            foreach (var item in lstFindToCreate)
+            if (lstChuaThanhToan.Count > 0)
             {
 
-                foreach (var item2 in lstThanhToanMoiThem)
+                //FIx bug tạo thanh toán:
+
+                List<ThanhToan> lstThanhToanMoiThem = new List<ThanhToan>();
+                foreach (var item in lstFindToCreate)
                 {
-                    if (item.MaHocVien == item2.MaHocVien)
+                    ThanhToan temp = new ThanhToan();
+                    temp.TongTien = 0;
+                    temp.NgayTT = null;
+                    temp.TrangThaiTT = -2;
+                    temp.MaHocVien = item.MaHocVien;
+                    db.ThanhToans.Add(temp);
+                    db.SaveChanges();
+
+                    lstThanhToanMoiThem.Add(temp);
+                }
+
+                foreach (var item in lstFindToCreate)
+                {
+
+                    foreach (var item2 in lstThanhToanMoiThem)
                     {
-                        ThanhToan temp = db.ThanhToans.Where(s => s.TrangThaiTT == -2 && s.MaHocVien == item.MaHocVien && s.NgayTT == null && s.TongTien == 0).FirstOrDefault();
+                        if (item.MaHocVien == item2.MaHocVien)
+                        {
+                            ThanhToan temp = db.ThanhToans.Where(s => s.TrangThaiTT == -2 && s.MaHocVien == item.MaHocVien && s.NgayTT == null && s.TongTien == 0).FirstOrDefault();
 
-                        DangKyNghi thisDKN = db.DangKyNghis.Where(s => s.MaDangKy == item.MaDangKy).FirstOrDefault();
+                            DangKyNghi thisDKN = db.DangKyNghis.Where(s => s.MaDangKy == item.MaDangKy).FirstOrDefault();
 
-                        thisDKN.MaThanhToan = temp.MaThanhToan;
-                        temp.TrangThaiTT = 0;
-                        db.SaveChanges();
+                            thisDKN.MaThanhToan = temp.MaThanhToan;
+                            temp.TrangThaiTT = 0;
+                            db.SaveChanges();
+                        }
+
+                    }
+                }
+
+
+
+                /////////////////////////////////////////////////////////////////////////
+                /// New Method to Calculate:
+
+
+                List<TieuChuanAn> lstTCA = db.TieuChuanAns.ToList();
+
+                List<Object_ThanhToan> lstObj_Thanhtoan = new List<Object_ThanhToan>();
+                foreach (var item in lstChuaThanhToan)
+                {
+                    List<ChiTietNghi> item_lstCTN = db.ChiTietNghis.Where(s => s.MaDangKy == item.MaDangKy).ToList();
+
+                    foreach (var itemCTN in item_lstCTN)
+                    {
+                        Object_ThanhToan temp = new Object_ThanhToan();
+                        temp.maDKy = item.MaDangKy;
+                        temp.maCTN = itemCTN.MaCTNghi;
+                        temp.maHV = item.MaHocVien;
+                        temp.maThanhToan = item.MaThanhToan;
+                        temp.ngayNghi = itemCTN.NgayNghi;
+                        temp.sang = (int)itemCTN.SoBuoiSang;
+                        temp.trua = (int)itemCTN.SoBuoiTrua;
+                        temp.toi = (int)itemCTN.SoBuoiToi;
+
+                        temp.AutoFindTCA_CALTienCTN(lstTCA);
+
+                        lstObj_Thanhtoan.Add(temp);
                     }
 
                 }
-            }
 
-            List<NhaBep_CatComChuaThanhToan> lstChuaThanhToan = db.NhaBep_CatComChuaThanhToan.Where(s => s.MaDonVi == maC && s.Lop == Lop).ToList();
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////
+                List<ThanhToan> DayLaListCacThanhToan_DuocTinh = new List<ThanhToan>();
+                //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-            /////////////////////////////////////////////////////////////////////////
-            /// New Method to Calculate:
-
-
-            List<TieuChuanAn> lstTCA = db.TieuChuanAns.ToList();
-
-            List<Object_ThanhToan> lstObj_Thanhtoan = new List<Object_ThanhToan>();
-            foreach (var item in lstChuaThanhToan)
-            {
-                List<ChiTietNghi> item_lstCTN = db.ChiTietNghis.Where(s => s.MaDangKy == item.MaDangKy).ToList();
-
-                foreach (var itemCTN in item_lstCTN)
+                //Save ThanhToan
+                foreach (var item in lstObj_Thanhtoan)
                 {
-                    Object_ThanhToan temp = new Object_ThanhToan();
-                    temp.maDKy = item.MaDangKy;
-                    temp.maCTN = itemCTN.MaCTNghi;
-                    temp.maHV = item.MaHocVien;
-                    temp.maThanhToan = item.MaThanhToan;
-                    temp.ngayNghi = itemCTN.NgayNghi;
-                    temp.sang = (int)itemCTN.SoBuoiSang;
-                    temp.trua = (int)itemCTN.SoBuoiTrua;
-                    temp.toi = (int)itemCTN.SoBuoiToi;
-
-                    temp.AutoFindTCA_CALTienCTN(lstTCA);
-
-                    lstObj_Thanhtoan.Add(temp);
-                }
-
-            }
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////
-            List<ThanhToan> DayLaListCacThanhToan_DuocTinh = new List<ThanhToan>();
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            //Save ThanhToan
-            foreach (var item in lstObj_Thanhtoan)
-            {
-                ThanhToan temp = db.ThanhToans.Where(s => s.MaThanhToan == item.maThanhToan).FirstOrDefault();
-                if ((int)temp.MaThanhToan == item.maThanhToan)
-                {
-                    if (temp.TongTien == null)
+                    ThanhToan temp = db.ThanhToans.Where(s => s.MaThanhToan == item.maThanhToan).FirstOrDefault();
+                    if ((int)temp.MaThanhToan == item.maThanhToan)
                     {
-                        temp.TongTien = item.TienCuaCTN;
+                        if (temp.TongTien == null)
+                        {
+                            temp.TongTien = item.TienCuaCTN;
+                        }
+                        else
+                        {
+                            //temp.TongTien += 0;
+                            temp.TongTien += item.TienCuaCTN;
+                        }
                     }
                     else
                     {
-                        //temp.TongTien += 0;
-                        temp.TongTien += item.TienCuaCTN;
+                        continue;
+                    }
+                    temp.NgayTT = DateTime.Now;
+                    temp.TrangThaiTT = 1;
+
+                    if (DayLaListCacThanhToan_DuocTinh.Contains(temp) == false)
+                        DayLaListCacThanhToan_DuocTinh.Add(temp);
+
+                    db.SaveChanges();
+
+
+                }
+
+                //Danh dau CONHABEP:
+                List<DanhSachNghi> thisDanhSachNghi = new List<DanhSachNghi>();
+                foreach (var item in lstChuaThanhToan)
+                {
+                    DanhSachNghi temp = db.DanhSachNghis.Where(s => s.MaDS == item.MaDS).FirstOrDefault();
+
+                    if (thisDanhSachNghi.Contains(temp) == false)
+                    {
+                        thisDanhSachNghi.Add(temp);
                     }
                 }
-                else
+
+                foreach (var item in thisDanhSachNghi)
                 {
-                    continue;
+                    DanhSachNghi temp = db.DanhSachNghis.Where(s => s.MaDS == item.MaDS).FirstOrDefault();
+                    temp.MaCBNhaBep = FormMain.maCB; //Ma: CONHABEP
+                    db.SaveChanges();
                 }
-                temp.NgayTT = DateTime.Now;
-                temp.TrangThaiTT = 1;
 
-                if (DayLaListCacThanhToan_DuocTinh.Contains(temp) == false)
-                    DayLaListCacThanhToan_DuocTinh.Add(temp);
-
-                db.SaveChanges();
-            }
-
-            //Danh dau CONHABEP:
-            List<DanhSachNghi> thisDanhSachNghi = new List<DanhSachNghi>();
-            foreach (var item in lstChuaThanhToan)
-            {
-                DanhSachNghi temp = db.DanhSachNghis.Where(s => s.MaDS == item.MaDS).FirstOrDefault();
-
-                if (thisDanhSachNghi.Contains(temp) == false)
+                //Tinh Toan de Hien Ket qua:
+                int TongSoSang = 0;
+                int TongSoTrua = 0;
+                int TongSoToi = 0;
+                int TongSoTien1 = 0;
+                foreach (var item in lstObj_Thanhtoan)
                 {
-                    thisDanhSachNghi.Add(temp);
+                    TongSoSang += item.sang;
+                    TongSoTrua += item.trua;
+                    TongSoToi += item.toi;
+                    TongSoTien1 += item.TienCuaCTN;
                 }
-            }
 
-            foreach (var item in thisDanhSachNghi)
-            {
-                DanhSachNghi temp = db.DanhSachNghis.Where(s => s.MaDS == item.MaDS).FirstOrDefault();
-                temp.MaCBNhaBep = FormMain.maCB; //Ma: CONHABEP
-                db.SaveChanges();
-            }
-
-            //Tinh Toan de Hien Ket qua:
-            int TongSoSang = 0;
-            int TongSoTrua = 0;
-            int TongSoToi = 0;
-            int TongSoTien1 = 0;
-            foreach (var item in lstObj_Thanhtoan)
-            {
-                TongSoSang += item.sang;
-                TongSoTrua += item.trua;
-                TongSoToi += item.toi;
-                TongSoTien1 += item.TienCuaCTN;
-            }
-
-            //Tinhs de ktra cho chac
-            int TongSoTien2 = 0;
-            foreach (var item in DayLaListCacThanhToan_DuocTinh)
-            {
-                TongSoTien2 += item.TongTien;
-            }
-
-            //Show text:
-            textEdit1.Text = TongSoSang.ToString();
-            textEdit2.Text = TongSoTrua.ToString();
-            textEdit3.Text = TongSoToi.ToString();
-            textEdit4.Text = TongSoTien1.ToString();
-
-            //Hien ra List:
-            List<Class_DuLieuCatComHienthiGirdView> lstHienThi = new List<Class_DuLieuCatComHienthiGirdView>();
-            foreach (var item in lstChuaThanhToan)
-            {
-                Class_DuLieuCatComHienthiGirdView temp = new Class_DuLieuCatComHienthiGirdView();
-                temp.maHV = item.MaHocVien;
-                temp.Hoten = item.HoTen;
-                temp.TongTien = db.ThanhToans.Where(s => s.MaThanhToan == item.MaThanhToan).FirstOrDefault().TongTien;
-
-                int sang = 0, trua = 0, toi = 0;
-
-                List<ChiTietNghi> _tempCTN = db.ChiTietNghis.Where(s => s.MaDangKy == item.MaDangKy).ToList();
-
-                foreach (var itemCTN in _tempCTN)
+                //Tinhs de ktra cho chac
+                int TongSoTien2 = 0;
+                foreach (var item in DayLaListCacThanhToan_DuocTinh)
                 {
-                    sang += (int)itemCTN.SoBuoiSang;
-                    trua += (int)itemCTN.SoBuoiTrua;
-                    toi += (int)itemCTN.SoBuoiToi;
+                    TongSoTien2 += item.TongTien;
                 }
-                temp.sobuasang = sang;
-                temp.sobuatoi = toi;
-                temp.sobuatrua = trua;
 
-                lstHienThi.Add(temp);
+                //Show text:
+                textEdit1.Text = TongSoSang.ToString();
+                textEdit2.Text = TongSoTrua.ToString();
+                textEdit3.Text = TongSoToi.ToString();
+                textEdit4.Text = TongSoTien1.ToString();
+
+                //Hien ra List:
+                List<Class_DuLieuCatComHienthiGirdView> lstHienThi = new List<Class_DuLieuCatComHienthiGirdView>();
+                foreach (var item in lstChuaThanhToan)
+                {
+                    Class_DuLieuCatComHienthiGirdView temp = new Class_DuLieuCatComHienthiGirdView();
+                    temp.maHV = item.MaHocVien;
+                    temp.Hoten = item.HoTen;
+                    temp.TongTien = db.ThanhToans.Where(s => s.MaThanhToan == item.MaThanhToan).FirstOrDefault().TongTien;
+
+                    int sang = 0, trua = 0, toi = 0;
+
+                    List<ChiTietNghi> _tempCTN = db.ChiTietNghis.Where(s => s.MaDangKy == item.MaDangKy).ToList();
+
+                    foreach (var itemCTN in _tempCTN)
+                    {
+                        sang += (int)itemCTN.SoBuoiSang;
+                        trua += (int)itemCTN.SoBuoiTrua;
+                        toi += (int)itemCTN.SoBuoiToi;
+                    }
+                    temp.sobuasang = sang;
+                    temp.sobuatoi = toi;
+                    temp.sobuatrua = trua;
+
+                    lstHienThi.Add(temp);
+                }
+                gridControl2.BeginUpdate();
+                gridView2.Columns.Clear();
+                gridControl2.DataSource = lstHienThi.Select(s => new { s.Hoten, s.sobuasang, s.sobuatrua, s.sobuatoi, s.TongTien });
+                gridControl2.RefreshDataSource();
+                gridControl2.Refresh();
+                gridControl2.EndUpdate();
+                if (gridView2.RowCount > 0 && gridView2.Columns.Count == 5)
+                {
+                    gridView2.Columns[0].Caption = "Họ tên";
+                    gridView2.Columns[1].Caption = "Số bữa sáng";
+                    gridView2.Columns[2].Caption = "Số bữa trưa";
+                    gridView2.Columns[3].Caption = "Số bữa tối";
+                    gridView2.Columns[4].Caption = "Tổng tiền";
+                }
+
+
+
+                MessageBox.Show("Đã thanh toán thành công!");
+
+                LoadDataGridControl1(true);
+                gridControl2.DataSource = null;
+                //reload();
             }
-            gridControl2.BeginUpdate();
-            gridView2.Columns.Clear();
-            gridControl2.DataSource = lstHienThi.Select(s => new { s.Hoten, s.sobuasang, s.sobuatrua, s.sobuatoi, s.TongTien });
-            gridControl2.RefreshDataSource();
-            gridControl2.Refresh();
-            gridControl2.EndUpdate();
-            if (gridView2.RowCount > 0 && gridView2.Columns.Count == 5)
-            {
-                gridView2.Columns[0].Caption = "Họ tên";
-                gridView2.Columns[1].Caption = "Số bữa sáng";
-                gridView2.Columns[2].Caption = "Số bữa trưa";
-                gridView2.Columns[3].Caption = "Số bữa tối";
-                gridView2.Columns[4].Caption = "Tổng tiền";
-            }
 
-
-
-            MessageBox.Show("Đã thanh toán thành công!");
-
-            LoadDataGridControl1(true);
-            gridControl2.DataSource = null;
-            //reload();
         }
 
 

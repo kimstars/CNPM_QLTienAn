@@ -32,7 +32,7 @@ namespace CNPM_QLTienAn.GUI
         private int mads;
 
 
-     
+
 
         public void LoadDS1()
         {
@@ -80,23 +80,29 @@ namespace CNPM_QLTienAn.GUI
             catch
             { }
         }
-       
+
 
 
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            var dsn = db.DanhSachNghis.SingleOrDefault(p => p.MaDS.ToString() == MaDS_XacNhan);
-            if (dsn != null)
+            if (DialogResult.Yes == MessageBox.Show("Bạn có chắc chắn muốn hủy?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
             {
-                dsn.PheDuyet = 0;
-                dsn.MaCBTieuDoan = maCBd;
-                db.SaveChanges();
-                MessageBox.Show("Danh sách đã được huỷ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                var dsn = db.DanhSachNghis.SingleOrDefault(p => p.MaDS.ToString() == MaDS_XacNhan);
+                if (dsn != null)
+                {
+                    dsn.PheDuyet = 0;
+                    dsn.MaCBTieuDoan = maCBd;
+                    db.SaveChanges();
+                    MessageBox.Show("Danh sách đã được huỷ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                dgvDSCho.DataSource = null;
+                LoadDS1();
+                dgvChiTietDS1.DataSource = null;
+
             }
-            dgvDSCho.DataSource = null;
-            dgvChiTietDS1.DataSource = null;
-            LoadDS1();
+
         }
 
         private void btnXacnhan_Click(object sender, EventArgs e)
@@ -114,12 +120,13 @@ namespace CNPM_QLTienAn.GUI
                 MessageBox.Show("Danh sách không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             dgvDSCho.DataSource = null;
-            dgvChiTietDS1.DataSource = null;
             LoadDS1();
+            dgvChiTietDS1.DataSource = null;
+
         }
 
 
-      
+
 
         private void dgvDSCho_View_RowClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {

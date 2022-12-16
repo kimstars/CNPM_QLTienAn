@@ -17,8 +17,8 @@ namespace CNPM_QLTienAn.GUI
         List<HocVien_DangKyNghi> listDK = new List<HocVien_DangKyNghi>();
 
         public Model_QLTA db = new Model_QLTA();
-        int mahvTT = 0;
-        int mahvRN = 0;
+        int MaHVCurrent = 0;
+
         public DaiDoi_NhapDanhSach()
         {
             InitializeComponent();
@@ -127,17 +127,38 @@ namespace CNPM_QLTienAn.GUI
                 {
                     if (listDK[i].NgayNghi == hv.NgayNghi)
                     {
-                        MessageBox.Show($"Đã tồn tại đăng ký tại ngày {hv.NgayNghi.ToString("dd-MM-yyyy")}", "Error");
+                        MessageBox.Show($"Đã tồn tại đăng ký tại ngày {hv.NgayNghi.ToString("dd-MM-yyyy")}", "Lỗi");
                         return false;
                     }
                 }
             }
+
+            var isDupInDB = db.ChiTietNghis.Where(x => x.NgayNghi == hv.NgayNghi && x.DangKyNghi.MaHocVien == hv.MaHocVien).FirstOrDefault();
+
+            if(isDupInDB != null)
+            {
+                MessageBox.Show($"Đã tồn tại đăng ký tại ngày {hv.NgayNghi.ToString("dd-MM-yyyy")}", "Thông báo !");
+
+                HocVien_DangKyNghi hv_dk = new HocVien_DangKyNghi();
+                hv_dk.MaHocVien = MaHVCurrent;
+                hv_dk.HoTen = tbRN_HoTen.Text;
+                hv_dk.Lop = tbRN_Lop.Text;
+                hv_dk.NgayNghi = Convert.ToDateTime(dtpRN_NgayNghi.EditValue);
+                hv_dk.Sang = chbRN_Sang.Checked ? 1 : 0;
+                hv_dk.Trua = chbRN_Trua.Checked ? 1 : 0;
+                hv_dk.Toi = chbRN_Toi.Checked ? 1 : 0;
+
+
+                return false;
+            }
+
+
             return true;
         }
 
         private void btnRN_Them_Click(object sender, EventArgs e)
         {
-            if (mahvRN == 0)
+            if (MaHVCurrent == 0)
             {
                 MessageBox.Show("Chưa chọn học viên");
                 return;
@@ -150,7 +171,7 @@ namespace CNPM_QLTienAn.GUI
             }
 
             HocVien_DangKyNghi hv_dk = new HocVien_DangKyNghi();
-            hv_dk.MaHocVien = mahvRN;
+            hv_dk.MaHocVien = MaHVCurrent;
             hv_dk.HoTen = tbRN_HoTen.Text;
             hv_dk.Lop = tbRN_Lop.Text;
             hv_dk.NgayNghi = Convert.ToDateTime(dtpRN_NgayNghi.EditValue);
@@ -160,7 +181,6 @@ namespace CNPM_QLTienAn.GUI
 
             if (IsNotDupDate(hv_dk))
             {
-
                 listDK.Add(hv_dk);
                 gridControl2.DataSource = null;
                 gridControl2.DataSource = listDK;
@@ -191,13 +211,13 @@ namespace CNPM_QLTienAn.GUI
         {
             if (radioGroup1.SelectedIndex == 0)
             {
-                mahvTT = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, "MaHocVien"));
+                MaHVCurrent = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, "MaHocVien"));
                 tbTT_HoTen.Text = gridView1.GetRowCellValue(e.RowHandle, "HoTen").ToString();
                 tbTT_Lop.Text = gridView1.GetRowCellValue(e.RowHandle, "Lop").ToString();
             }
             else
             {
-                mahvRN = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, "MaHocVien"));
+                MaHVCurrent = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle, "MaHocVien"));
                 tbRN_HoTen.Text = gridView1.GetRowCellValue(e.RowHandle, "HoTen").ToString();
                 tbRN_Lop.Text = gridView1.GetRowCellValue(e.RowHandle, "Lop").ToString();
             }
@@ -230,7 +250,7 @@ namespace CNPM_QLTienAn.GUI
 
         private void btnTT_Them_Click(object sender, EventArgs e)
         {
-            if (mahvTT == 0)
+            if (MaHVCurrent == 0)
             {
                 MessageBox.Show("Chưa chọn học viên");
                 return;
@@ -243,7 +263,7 @@ namespace CNPM_QLTienAn.GUI
             }
 
             HocVien_DangKyNghi hv_dk1 = new HocVien_DangKyNghi();
-            hv_dk1.MaHocVien = mahvTT;
+            hv_dk1.MaHocVien = MaHVCurrent;
             hv_dk1.HoTen = tbTT_HoTen.Text;
             hv_dk1.Lop = tbTT_Lop.Text;
 
@@ -252,25 +272,25 @@ namespace CNPM_QLTienAn.GUI
             hv_dk1.Trua = chbTT_TruaNghi.Checked ? 1 : 0;
             hv_dk1.Toi = chbTT_ToiNghi.Checked ? 1 : 0;
 
-            if (IsNotDupDate(hv_dk1)) listDK.Add(hv_dk1); else return;
+            if (IsNotDupDate(hv_dk1) && checkDateTT()) listDK.Add(hv_dk1); else return;
 
             DateTime ngayTemp = hv_dk1.NgayNghi;
             while (DateTime.Compare(ngayTemp.AddDays(1), Convert.ToDateTime(dtpTT_NgayTra.EditValue)) < 0)
             {
                 ngayTemp = ngayTemp.AddDays(1);
                 HocVien_DangKyNghi temp = new HocVien_DangKyNghi();
-                temp.MaHocVien = mahvTT;
+                temp.MaHocVien = MaHVCurrent;
                 temp.HoTen = tbTT_HoTen.Text;
                 temp.Lop = tbTT_Lop.Text;
                 temp.NgayNghi = ngayTemp;
                 temp.Sang = 1;
                 temp.Trua = 1;
                 temp.Toi = 1;
-                if (IsNotDupDate(temp)) listDK.Add(temp); else return;
+                if (IsNotDupDate(temp) && checkDateTT()) listDK.Add(temp); else return;
             }
 
             HocVien_DangKyNghi hv_dk2 = new HocVien_DangKyNghi();
-            hv_dk2.MaHocVien = mahvTT;
+            hv_dk2.MaHocVien = MaHVCurrent;
             hv_dk2.HoTen = tbTT_HoTen.Text;
             hv_dk2.Lop = tbTT_Lop.Text;
 
@@ -280,7 +300,7 @@ namespace CNPM_QLTienAn.GUI
             hv_dk2.Toi = chbTT_ToiTra.Checked ? 1 : 0;
 
 
-            if (IsNotDupDate(hv_dk2))
+            if (IsNotDupDate(hv_dk2) && checkDateTT())
             {
                 listDK.Add(hv_dk2);
                 gridControl2.DataSource = null;
@@ -291,7 +311,21 @@ namespace CNPM_QLTienAn.GUI
 
         }
 
-       
+        bool checkDateTT()
+        {
+            DateTime start = dtpTT_NgayNghi.DateTime;
+            DateTime end = dtpTT_NgayTra.DateTime;
+            if (DateTime.Compare(start, end) >= 0)
+            {
+                MessageBox.Show("Ngày trả phép phải sau hoặc bằng ngày đăng ký nghỉ !", "Lỗi");
+                return false;
+            }
+            return true;
+        }
 
+        private void dtpTT_NgayTra_EditValueChanged(object sender, EventArgs e)
+        {
+            checkDateTT();
+        }
     }
 }
