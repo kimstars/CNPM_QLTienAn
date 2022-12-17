@@ -40,15 +40,22 @@ namespace CNPM_QLTienAn.GUI
                                     HoTenc = cbc.HoTen,
                                     HoTend = cbd.HoTen
                                 }).ToList();
-                ds_DaHuy.Reverse();
-                dgvDaHuy_View.OptionsBehavior.Editable = false;
-                gridView2.OptionsBehavior.Editable = false;
-                dgvDaHuy.DataSource = ds_DaHuy;
-
+                if (ds_DaHuy.Count > 0)
+                {
+                    ds_DaHuy.Reverse();
+                    dgvDaHuy_View.OptionsBehavior.Editable = false;
+                    gridView2.OptionsBehavior.Editable = false;
+                    dgvDaHuy.DataSource = ds_DaHuy;
+                }
+                else
+                {
+                    MessageBox.Show("Chưa có danh sách đã xác nhận nào !");
+                    return;
+                }
             }
             catch
             { }
-            LoadDSChiTietDaHuy();
+            //LoadDSChiTietDaHuy();
         }
 
         public void LoadDSChiTietDaHuy()

@@ -40,10 +40,19 @@ namespace CNPM_QLTienAn.GUI
                                         HoTenc = cbc.HoTen,
                                         HoTend = cbd.HoTen
                                     }).ToList();
-                ds_DaXacNhan.Reverse();
-                dgvDaXacNhan_View.OptionsBehavior.Editable = false;
-                gridView2.OptionsBehavior.Editable = false;
-                dgvDaXacNhan.DataSource = ds_DaXacNhan;
+                if(ds_DaXacNhan.Count > 0)
+                {
+                    ds_DaXacNhan.Reverse();
+                    dgvDaXacNhan_View.OptionsBehavior.Editable = false;
+                    gridView2.OptionsBehavior.Editable = false;
+                    dgvDaXacNhan.DataSource = ds_DaXacNhan;
+
+                }
+                else
+                {
+                    MessageBox.Show("Chưa có danh sách đã xác nhận nào !");
+                    return;
+                }
 
             }
             catch
@@ -82,11 +91,7 @@ namespace CNPM_QLTienAn.GUI
 
         }
 
-        private void dgvDaXacNhan_View_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            LoadDSChiTietDaXacNhan();
-
-        }
+        
 
         private void dgvDaXacNhan_Load(object sender, EventArgs e)
         {

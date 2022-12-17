@@ -29,12 +29,12 @@ namespace CNPM_QLTienAn.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TieuDoan_DaHuy));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,7 +119,6 @@ namespace CNPM_QLTienAn.GUI
             this.dgvDaHuy_View.GridControl = this.dgvDaHuy;
             this.dgvDaHuy_View.Name = "dgvDaHuy_View";
             this.dgvDaHuy_View.OptionsView.ShowGroupPanel = false;
-            this.dgvDaHuy_View.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.dgvDaHuy_View_FocusedRowChanged);
             // 
             // gridColumn4
             // 
@@ -134,10 +133,10 @@ namespace CNPM_QLTienAn.GUI
             // dgvDaHuy
             // 
             this.dgvDaHuy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDaHuy.Location = new System.Drawing.Point(2, 17);
+            this.dgvDaHuy.Location = new System.Drawing.Point(2, 28);
             this.dgvDaHuy.MainView = this.dgvDaHuy_View;
             this.dgvDaHuy.Name = "dgvDaHuy";
-            this.dgvDaHuy.Size = new System.Drawing.Size(428, 728);
+            this.dgvDaHuy.Size = new System.Drawing.Size(428, 717);
             this.dgvDaHuy.TabIndex = 0;
             this.dgvDaHuy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvDaHuy_View});
@@ -158,9 +157,9 @@ namespace CNPM_QLTienAn.GUI
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -249,13 +248,13 @@ namespace CNPM_QLTienAn.GUI
             // dgvChiTietDaHuy
             // 
             this.dgvChiTietDaHuy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvChiTietDaHuy.Location = new System.Drawing.Point(2, 17);
+            this.dgvChiTietDaHuy.Location = new System.Drawing.Point(2, 28);
             this.dgvChiTietDaHuy.MainView = this.gridView2;
             this.dgvChiTietDaHuy.Name = "dgvChiTietDaHuy";
             this.dgvChiTietDaHuy.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.chkEdit});
-            this.dgvChiTietDaHuy.Size = new System.Drawing.Size(526, 728);
+            this.dgvChiTietDaHuy.Size = new System.Drawing.Size(526, 717);
             this.dgvChiTietDaHuy.TabIndex = 8;
             this.dgvChiTietDaHuy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});

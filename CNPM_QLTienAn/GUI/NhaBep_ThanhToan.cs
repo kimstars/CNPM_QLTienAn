@@ -341,10 +341,12 @@ namespace CNPM_QLTienAn.GUI
             UndoingChangesDbContextLevel(db);
 
             List<NhaBep_FindToCreateThanhToan> lstFindToCreate = db.NhaBep_FindToCreateThanhToan.ToList();
-            string Lop = cbbLop.SelectedItem.ToString();
+
+            string Lop = cbbLop.Text;
 
             List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
             int maC = lstDonVi.Find(s => s.TenDonVi == cbbDonVi.Text).MaDonVi;
+
             List<NhaBep_CatComChuaThanhToan> lstChuaThanhToan = db.NhaBep_CatComChuaThanhToan.Where(s => s.MaDonVi == maC && s.Lop == Lop).ToList();
             //MessageBox.Show($"so luong = {lstChuaThanhToan.Count}");
 
