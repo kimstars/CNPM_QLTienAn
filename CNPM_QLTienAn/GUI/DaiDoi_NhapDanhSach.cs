@@ -311,8 +311,8 @@ namespace CNPM_QLTienAn.GUI
                 gridControl2.DataSource = null;
                 gridControl2.DataSource = listDK;
             }
-            else return;
 
+            else return;
 
         }
 
