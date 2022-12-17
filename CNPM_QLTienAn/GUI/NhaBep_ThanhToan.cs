@@ -541,7 +541,7 @@ namespace CNPM_QLTienAn.GUI
 
 
 
-                MessageBox.Show("Đã thanh toán thành công!");
+                MessageBox.Show("Đã thanh toán thành công !");
 
                 LoadDataGridControl1(true);
                 gridControl2.DataSource = null;
