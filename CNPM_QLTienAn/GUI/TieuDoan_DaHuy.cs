@@ -78,8 +78,8 @@ namespace CNPM_QLTienAn.GUI
                                      SoBuoiTrua = ctn.SoBuoiTrua,
                                      SoBuoiToi = ctn.SoBuoiToi
                                  }).ToList();
-
                 dgvChiTietDaHuy.DataSource = dsCTDaHuy;
+
             }
             catch
             { }
