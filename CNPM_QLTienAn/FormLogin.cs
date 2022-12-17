@@ -27,7 +27,7 @@ namespace CNPM_QLTienAn
 
             if(username == "")
             {
-                MessageBox.Show("Hãy nhập tên đăng nhập !", "Error");
+                MessageBox.Show("Hãy nhập tên đăng nhập!", "Error");
                 return;
             }
             if (password == "")
