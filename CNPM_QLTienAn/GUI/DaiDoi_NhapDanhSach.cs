@@ -63,8 +63,13 @@ namespace CNPM_QLTienAn.GUI
         public static DateTime GetNextWeekday(DateTime start, DayOfWeek day)
         {
             // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
-            int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
-            return start.AddDays(daysToAdd);
+            //MessageBox.Show(((int)day - (int)start.DayOfWeek).ToString());
+            if((int)day - (int)start.DayOfWeek > 0)
+            { 
+                int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
+                return start.AddDays(daysToAdd);
+            }
+            else { return start; }
         }
 
 
@@ -315,7 +320,7 @@ namespace CNPM_QLTienAn.GUI
         {
             DateTime start = dtpTT_NgayNghi.DateTime;
             DateTime end = dtpTT_NgayTra.DateTime;
-            if (DateTime.Compare(start, end) >= 0)
+            if (DateTime.Compare(start, end) > 0)
             {
                 MessageBox.Show("Ngày trả phép phải sau hoặc bằng ngày đăng ký nghỉ !", "Lỗi");
                 return false;

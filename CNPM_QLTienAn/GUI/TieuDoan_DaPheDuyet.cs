@@ -82,9 +82,6 @@ namespace CNPM_QLTienAn.GUI
 
         }
 
-
-
-
         private void dgvDaXacNhan_View_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             LoadDSChiTietDaXacNhan();
