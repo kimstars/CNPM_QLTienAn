@@ -182,6 +182,7 @@ namespace CNPM_QLTienAn.GUI
             // 
             this.textEdit4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textEdit4.EditValue = "";
+            this.textEdit4.Enabled = false;
             this.textEdit4.Location = new System.Drawing.Point(153, 710);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -201,6 +202,7 @@ namespace CNPM_QLTienAn.GUI
             // textEdit3
             // 
             this.textEdit3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.textEdit3.Enabled = false;
             this.textEdit3.Location = new System.Drawing.Point(153, 662);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -220,6 +222,7 @@ namespace CNPM_QLTienAn.GUI
             // textEdit2
             // 
             this.textEdit2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.textEdit2.Enabled = false;
             this.textEdit2.Location = new System.Drawing.Point(153, 614);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -229,6 +232,7 @@ namespace CNPM_QLTienAn.GUI
             // textEdit1
             // 
             this.textEdit1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.textEdit1.Enabled = false;
             this.textEdit1.Location = new System.Drawing.Point(153, 566);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
