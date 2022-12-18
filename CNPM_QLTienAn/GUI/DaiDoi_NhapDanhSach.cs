@@ -44,9 +44,19 @@ namespace CNPM_QLTienAn.GUI
             tbTT_HoTen.Text = "";
             tbTT_Lop.Text = "";
 
+            if((int)DateTime.Today.DayOfWeek < 5 && (int)DateTime.Today.DayOfWeek > 0)
+            {
+                dtpTT_NgayNghi.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Friday);
+                dtpTT_NgayTra.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Sunday);
+
+            }
+            else
+            {
+                dtpTT_NgayNghi.EditValue = DateTime.Today;
+                dtpTT_NgayTra.EditValue = DateTime.Today.AddDays(1) ;
+            }
+
             dtpRN_NgayNghi.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Saturday);
-            dtpTT_NgayNghi.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Friday);
-            dtpTT_NgayTra.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Sunday);
 
             chbRN_Sang.Checked = false;
             chbRN_Trua.Checked = false;
@@ -63,7 +73,7 @@ namespace CNPM_QLTienAn.GUI
         public static DateTime GetNextWeekday(DateTime start, DayOfWeek day)
         {
             // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
-            //MessageBox.Show(((int)day - (int)start.DayOfWeek).ToString());
+            //MessageBox.Show(((int)DateTime.Today.DayOfWeek).ToString());
             if((int)day - (int)start.DayOfWeek > 0)
             { 
                 int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;

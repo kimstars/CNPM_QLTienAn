@@ -49,7 +49,7 @@ namespace CNPM_QLTienAn.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Chưa có danh sách đã xác nhận nào !");
+                    MessageBox.Show("Chưa có danh sách đã hủy nào !");
                     return;
                 }
             }
@@ -78,8 +78,8 @@ namespace CNPM_QLTienAn.GUI
                                      SoBuoiTrua = ctn.SoBuoiTrua,
                                      SoBuoiToi = ctn.SoBuoiToi
                                  }).ToList();
-
                 dgvChiTietDaHuy.DataSource = dsCTDaHuy;
+
             }
             catch
             { }

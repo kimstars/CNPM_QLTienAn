@@ -52,21 +52,21 @@ namespace CNPM_QLTienAn.GUI
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cbDot = new System.Windows.Forms.ComboBox();
+            this.btnLoc = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.hocVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -329,6 +329,24 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Thanh toán tiền ăn học viên";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(93, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "anhttt";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(93, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 17);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "chu tuan kiet";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -386,8 +404,8 @@ namespace CNPM_QLTienAn.GUI
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.comboBox1);
-            this.groupControl2.Controls.Add(this.simpleButton1);
+            this.groupControl2.Controls.Add(this.cbDot);
+            this.groupControl2.Controls.Add(this.btnLoc);
             this.groupControl2.Controls.Add(this.label4);
             this.groupControl2.Controls.Add(this.label3);
             this.groupControl2.Controls.Add(this.dateEdit2);
@@ -400,21 +418,21 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Thanh toán tiền ăn học viên";
             // 
-            // comboBox1
+            // cbDot
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(71, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 24);
-            this.comboBox1.TabIndex = 6;
+            this.cbDot.FormattingEnabled = true;
+            this.cbDot.Location = new System.Drawing.Point(71, 40);
+            this.cbDot.Name = "cbDot";
+            this.cbDot.Size = new System.Drawing.Size(125, 24);
+            this.cbDot.TabIndex = 6;
             // 
-            // simpleButton1
+            // btnLoc
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(345, 78);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(94, 58);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "Lọc";
+            this.btnLoc.Location = new System.Drawing.Point(354, 69);
+            this.btnLoc.Name = "btnLoc";
+            this.btnLoc.Size = new System.Drawing.Size(94, 58);
+            this.btnLoc.TabIndex = 5;
+            this.btnLoc.Text = "Lọc";
             // 
             // label4
             // 
@@ -466,24 +484,6 @@ namespace CNPM_QLTienAn.GUI
             this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đợt :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(93, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 17);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "chu tuan kiet";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(93, 90);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "anhttt";
             // 
             // DaiDoi_DSThanhToan
             // 
@@ -552,8 +552,8 @@ namespace CNPM_QLTienAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.ComboBox cbDot;
+        private DevExpress.XtraEditors.SimpleButton btnLoc;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.DateEdit dateEdit2;

@@ -20,8 +20,9 @@ namespace CNPM_QLTienAn
         DaiDoi_NhapDanhSach uc1;
         DaiDoi_ChoPheDuyet uc2;
         DaiDoi_DaPheDuyet uc3;
-        //DaiDoi_DaHuy uc4;
-        DaiDoi_DSThanhToan uc4;
+        DaiDoi_DaHuy uc4;
+        DaiDoi_DSThanhToan uc41;
+        DaiDoi_QuanLyDanhSach uc42;
 
         TieuDoan_ChoPheDuyet uc6;
         TieuDoan_DaPheDuyet uc7;
@@ -65,7 +66,11 @@ namespace CNPM_QLTienAn
                     AccordionControlElement it2 = new AccordionControlElement(ElementStyle.Item) { Text = "Đang chờ duyệt" };
                     AccordionControlElement it3 = new AccordionControlElement(ElementStyle.Item) { Text = "Đã duyệt" };
                     AccordionControlElement it4 = new AccordionControlElement(ElementStyle.Item) { Text = "Đã hủy" };
-                    accordionControl1.Elements.AddRange(new AccordionControlElement[] { it1, it2, it3, it4 });
+                    AccordionControlElement it41 = new AccordionControlElement(ElementStyle.Item) { Text = "Danh sách thanh toán" };
+                    AccordionControlElement it42 = new AccordionControlElement(ElementStyle.Item) { Text = "Quản lý quân số" };
+
+                    accordionControl1.Elements.AddRange(new AccordionControlElement[] { it1, it2, it3, it4,it41, it42 });
+
                     accordionControl1.AllowItemSelection = true;
                     accordionControl1.CollapseAll();
 
@@ -73,17 +78,23 @@ namespace CNPM_QLTienAn
                     it2.Click += It2_Click;
                     it3.Click += It3_Click;
                     it4.Click += It4_Click;
+                    it41.Click += It41_Click;
+                    it42.Click += It42_Click;
 
                     uc1 = new DaiDoi_NhapDanhSach();
                     uc2 = new DaiDoi_ChoPheDuyet();
                     uc3 = new DaiDoi_DaPheDuyet();
-                    //uc4 = new DaiDoi_DaHuy();
-                    uc4 = new DaiDoi_DSThanhToan();
+                    uc4 = new DaiDoi_DaHuy();
+                    uc41 = new DaiDoi_DSThanhToan();
+                    uc42 = new DaiDoi_QuanLyDanhSach(maCB);
+
                     uc1.Dock = DockStyle.Fill;
                     uc2.Dock = DockStyle.Fill;
                     uc3.Dock = DockStyle.Fill;
                     uc4.Dock = DockStyle.Fill;
-                    fluentDesignFormContainer1.Controls.AddRange(new Control[] { uc1, uc2, uc3, uc4 });
+                    uc41.Dock = DockStyle.Fill;
+                    uc42.Dock = DockStyle.Fill;
+                    fluentDesignFormContainer1.Controls.AddRange(new Control[] { uc1, uc2, uc3, uc4, uc41, uc42 });
 
 
                     break;
@@ -227,6 +238,19 @@ namespace CNPM_QLTienAn
             //uc4.ReloadAll();
             uc4.BringToFront();
         }
+        private void It41_Click(object sender, EventArgs e)
+        {
+            //uc4.ReloadAll();
+            uc41.BringToFront();
+        }
+        private void It42_Click(object sender, EventArgs e)
+        {
+            //uc4.ReloadAll();
+            uc42.BringToFront();
+        }
+
+
+
 
         private void It3_Click(object sender, EventArgs e)
         {
