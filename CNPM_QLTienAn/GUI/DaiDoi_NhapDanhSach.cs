@@ -53,7 +53,7 @@ namespace CNPM_QLTienAn.GUI
             else
             {
                 dtpTT_NgayNghi.EditValue = DateTime.Today;
-                dtpTT_NgayTra.EditValue = DateTime.Today;
+                dtpTT_NgayTra.EditValue = DateTime.Today.AddDays(1) ;
             }
 
             dtpRN_NgayNghi.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Saturday);

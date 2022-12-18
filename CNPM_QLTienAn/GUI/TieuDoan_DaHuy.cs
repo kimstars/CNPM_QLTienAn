@@ -49,7 +49,7 @@ namespace CNPM_QLTienAn.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Chưa có danh sách đã xác nhận nào !");
+                    MessageBox.Show("Chưa có danh sách đã hủy nào !");
                     return;
                 }
             }

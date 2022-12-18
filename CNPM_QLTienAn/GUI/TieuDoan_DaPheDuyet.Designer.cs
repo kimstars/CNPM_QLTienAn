@@ -119,7 +119,9 @@ namespace CNPM_QLTienAn.GUI
             this.gridColumn5});
             this.dgvDaXacNhan_View.GridControl = this.dgvDaXacNhan;
             this.dgvDaXacNhan_View.Name = "dgvDaXacNhan_View";
+            this.dgvDaXacNhan_View.OptionsBehavior.Editable = false;
             this.dgvDaXacNhan_View.OptionsView.ShowGroupPanel = false;
+            this.dgvDaXacNhan_View.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.dgvDaXacNhan_View_RowClick);
             // 
             // gridColumn4
             // 

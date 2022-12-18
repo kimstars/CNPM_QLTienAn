@@ -286,6 +286,7 @@ namespace CNPM_QLTienAn.GUI
             this.cbbLop.Size = new System.Drawing.Size(121, 24);
             this.cbbLop.TabIndex = 1;
             this.cbbLop.Text = "BDATTT";
+            this.cbbLop.SelectedIndexChanged += new System.EventHandler(this.cbbLop_SelectedIndexChanged);
             // 
             // cbbDonVi
             // 
@@ -295,6 +296,7 @@ namespace CNPM_QLTienAn.GUI
             this.cbbDonVi.Size = new System.Drawing.Size(121, 24);
             this.cbbDonVi.TabIndex = 1;
             this.cbbDonVi.Text = "c153";
+            this.cbbDonVi.SelectedIndexChanged += new System.EventHandler(this.cbbDonVi_SelectedIndexChanged);
             // 
             // groupControl2
             // 
@@ -355,6 +357,7 @@ namespace CNPM_QLTienAn.GUI
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "NhaBep_ThanhToan";
             this.Size = new System.Drawing.Size(981, 760);
+            this.Load += new System.EventHandler(this.NhaBep_ThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();

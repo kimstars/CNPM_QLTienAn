@@ -40,32 +40,28 @@ namespace CNPM_QLTienAn.GUI
                                         HoTenc = cbc.HoTen,
                                         HoTend = cbd.HoTen
                                     }).ToList();
+
                 if(ds_DaXacNhan.Count > 0)
                 {
                     ds_DaXacNhan.Reverse();
                     dgvDaXacNhan_View.OptionsBehavior.Editable = false;
                     gridView2.OptionsBehavior.Editable = false;
                     dgvDaXacNhan.DataSource = ds_DaXacNhan;
+                    LoadDSChiTietDaXacNhan(ds_DaXacNhan[0].MaDS);
 
                 }
-                else
-                {
-                    MessageBox.Show("Chưa có danh sách đã xác nhận nào !");
-                    return;
-                }
+
 
             }
             catch
             { }
-            LoadDSChiTietDaXacNhan();
         }
 
-        public void LoadDSChiTietDaXacNhan()
+        public void LoadDSChiTietDaXacNhan(int mads)
         {
             try
             {
-                int mads = (int)dgvDaXacNhan_View.GetFocusedRowCellValue("MaDS");
-                MaDS_DaXacNhan = mads.ToString();
+                
                 var dsCTDaXacNhan = (from ds in db.DanhSachNghis
                                      join dkn in db.DangKyNghis on ds.MaDS equals dkn.MaDS
                                      join ctn in db.ChiTietNghis on dkn.MaDangKy equals ctn.MaDangKy
@@ -86,9 +82,6 @@ namespace CNPM_QLTienAn.GUI
             catch
             { }
 
-
-
-
         }
 
         
@@ -97,6 +90,11 @@ namespace CNPM_QLTienAn.GUI
         {
             LoadDSDaPheDuyet();
 
+        }
+
+        private void dgvDaXacNhan_View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            LoadDSChiTietDaXacNhan(Convert.ToInt32(dgvDaXacNhan_View.GetRowCellValue(e.RowHandle, "MaHocVien")));
         }
     }
 
