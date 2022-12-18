@@ -1,0 +1,19 @@
+name: Notify on pull
+
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: send message on pull
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            '${{ github.actor }}' VỪA PULL '${{ github.ref }}' VỀ BÀ CON ƠI !!!
