@@ -543,10 +543,11 @@ namespace CNPM_QLTienAn.GUI
 
 
 
-                MessageBox.Show("Đã thanh toán thành công!");
+                MessageBox.Show("Đã thanh toán thành công !");
 
                 LoadDataGridControl1(true);
                 gridControl2.DataSource = null;
+                textEdit1.Text = textEdit2.Text = textEdit3.Text = textEdit4.Text = "0";
                 //reload();
             }
 
