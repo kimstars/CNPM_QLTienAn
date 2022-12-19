@@ -67,6 +67,14 @@ namespace CNPM_QLTienAn.GUI
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.hocVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -185,7 +193,7 @@ namespace CNPM_QLTienAn.GUI
             this.gridControl1.Location = new System.Drawing.Point(2, 28);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(661, 542);
+            this.gridControl1.Size = new System.Drawing.Size(661, 593);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -318,6 +326,12 @@ namespace CNPM_QLTienAn.GUI
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.label13);
+            this.groupControl3.Controls.Add(this.label12);
+            this.groupControl3.Controls.Add(this.label11);
+            this.groupControl3.Controls.Add(this.label10);
+            this.groupControl3.Controls.Add(this.label9);
+            this.groupControl3.Controls.Add(this.label8);
             this.groupControl3.Controls.Add(this.label7);
             this.groupControl3.Controls.Add(this.label6);
             this.groupControl3.Controls.Add(this.label5);
@@ -332,25 +346,25 @@ namespace CNPM_QLTienAn.GUI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(93, 90);
+            this.label7.Location = new System.Drawing.Point(125, 107);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 17);
+            this.label7.Size = new System.Drawing.Size(58, 17);
             this.label7.TabIndex = 3;
-            this.label7.Text = "anhttt";
+            this.label7.Text = "ANHTTT";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(93, 62);
+            this.label6.Location = new System.Drawing.Point(125, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 17);
+            this.label6.Size = new System.Drawing.Size(94, 17);
             this.label6.TabIndex = 2;
-            this.label6.Text = "chu tuan kiet";
+            this.label6.Text = "Chu Tuấn Kiệt";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 90);
+            this.label5.Location = new System.Drawing.Point(26, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 17);
             this.label5.TabIndex = 1;
@@ -359,7 +373,7 @@ namespace CNPM_QLTienAn.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 62);
+            this.label2.Location = new System.Drawing.Point(26, 62);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 17);
             this.label2.TabIndex = 0;
@@ -376,8 +390,8 @@ namespace CNPM_QLTienAn.GUI
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.86096F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.13904F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.04278F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.95722F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(671, 748);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
@@ -387,9 +401,9 @@ namespace CNPM_QLTienAn.GUI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl1.Controls.Add(this.gridControl1);
-            this.groupControl1.Location = new System.Drawing.Point(3, 173);
+            this.groupControl1.Location = new System.Drawing.Point(3, 122);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(665, 572);
+            this.groupControl1.Size = new System.Drawing.Size(665, 623);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Danh sách thanh toán";
             // 
@@ -399,11 +413,13 @@ namespace CNPM_QLTienAn.GUI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 164);
+            this.panel1.Size = new System.Drawing.Size(665, 113);
             this.panel1.TabIndex = 1;
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.label14);
+            this.groupControl2.Controls.Add(this.checkBox1);
             this.groupControl2.Controls.Add(this.cbDot);
             this.groupControl2.Controls.Add(this.btnLoc);
             this.groupControl2.Controls.Add(this.label4);
@@ -414,7 +430,7 @@ namespace CNPM_QLTienAn.GUI
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(665, 164);
+            this.groupControl2.Size = new System.Drawing.Size(665, 113);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Thanh toán tiền ăn học viên";
             // 
@@ -428,16 +444,18 @@ namespace CNPM_QLTienAn.GUI
             // 
             // btnLoc
             // 
-            this.btnLoc.Location = new System.Drawing.Point(354, 69);
+            this.btnLoc.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoc.Appearance.Options.UseFont = true;
+            this.btnLoc.Location = new System.Drawing.Point(557, 40);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(94, 58);
+            this.btnLoc.Size = new System.Drawing.Size(94, 51);
             this.btnLoc.TabIndex = 5;
             this.btnLoc.Text = "Lọc";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 117);
+            this.label4.Location = new System.Drawing.Point(370, 43);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 4;
@@ -446,7 +464,7 @@ namespace CNPM_QLTienAn.GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 78);
+            this.label3.Location = new System.Drawing.Point(202, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 17);
             this.label3.TabIndex = 3;
@@ -455,7 +473,7 @@ namespace CNPM_QLTienAn.GUI
             // dateEdit2
             // 
             this.dateEdit2.EditValue = null;
-            this.dateEdit2.Location = new System.Drawing.Point(71, 114);
+            this.dateEdit2.Location = new System.Drawing.Point(417, 42);
             this.dateEdit2.Name = "dateEdit2";
             this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -467,7 +485,7 @@ namespace CNPM_QLTienAn.GUI
             // dateEdit1
             // 
             this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(71, 75);
+            this.dateEdit1.Location = new System.Drawing.Point(239, 42);
             this.dateEdit1.Name = "dateEdit1";
             this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -484,6 +502,81 @@ namespace CNPM_QLTienAn.GUI
             this.label1.Size = new System.Drawing.Size(40, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đợt :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(5, 266);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 23);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Tổng tiền: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(26, 147);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 17);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Loại học viên:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(26, 198);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 17);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Loại TCA:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(125, 147);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(51, 17);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "HSQBS";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(125, 198);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 17);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Cho HSQBS";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(125, 266);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(136, 23);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "240.000 VND";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(417, 74);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(119, 21);
+            this.checkBox1.TabIndex = 8;
+            this.checkBox1.Text = "Đã thanh toán";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(332, 75);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(79, 17);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Trạng thái :";
             // 
             // DaiDoi_DSThanhToan
             // 
@@ -561,5 +654,13 @@ namespace CNPM_QLTienAn.GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

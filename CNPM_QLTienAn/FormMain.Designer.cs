@@ -31,7 +31,6 @@ namespace CNPM_QLTienAn
         {
             this.fluentDesignFormContainer1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.btnSubmit = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
@@ -49,19 +48,12 @@ namespace CNPM_QLTienAn
             // accordionControl1
             // 
             this.accordionControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.accordionControl1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement1});
             this.accordionControl1.Location = new System.Drawing.Point(0, 39);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
             this.accordionControl1.Size = new System.Drawing.Size(260, 860);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
-            // 
-            // accordionControlElement1
-            // 
-            this.accordionControlElement1.Name = "accordionControlElement1";
-            this.accordionControlElement1.Text = "Element1";
             // 
             // fluentDesignFormControl1
             // 
@@ -108,6 +100,5 @@ namespace CNPM_QLTienAn
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
         private DevExpress.XtraBars.BarButtonItem btnSubmit;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
     }
 }

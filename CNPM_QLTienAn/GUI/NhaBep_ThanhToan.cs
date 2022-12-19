@@ -71,6 +71,8 @@ namespace CNPM_QLTienAn.GUI
             List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
             LoadDataGridControl1(false);
 
+            LoadDataGridControl2();
+
             LoadDataIntoComboBoxLop(cbbDonVi.SelectedItem.ToString(), lstDonVi);
 
             //Clear Selected Item:
@@ -122,7 +124,7 @@ namespace CNPM_QLTienAn.GUI
             List<NhaBep_LichSuCatComLop> lstCatComLop;
             if (isLoadlop)
             {
-                string Lop = cbbLop.SelectedItem.ToString();
+                string Lop = cbbLop.Text;
                 lstCatComLop = db.NhaBep_LichSuCatComLop.Where(s => s.MaDonVi == maC && s.Lop == Lop && s.TrangThaiTT == 1).ToList();
             }
             else
@@ -142,7 +144,7 @@ namespace CNPM_QLTienAn.GUI
             UndoingChangesDbContextLevel(db);
             List<DonVi> lstDonVi = db.DonVis.Where(s => s.TenDonVi.Contains("c")).ToList();
             int maC = lstDonVi.Find(s => s.TenDonVi == cbbDonVi.SelectedItem.ToString()).MaDonVi;
-            string Lop = cbbLop.SelectedItem.ToString();
+            string Lop = cbbLop.Text;
 
             //FIx bug tạo thanh toán:
             List<NhaBep_FindToCreateThanhToan> lstFindToCreate = db.NhaBep_FindToCreateThanhToan.ToList();
@@ -184,7 +186,17 @@ namespace CNPM_QLTienAn.GUI
 
             }
 
-            List<NhaBep_CatComChuaThanhToan> lstChuaThanhToan = db.NhaBep_CatComChuaThanhToan.Where(s => s.MaDonVi == maC && s.Lop == Lop).ToList();
+            List<NhaBep_CatComChuaThanhToan> lstChuaThanhToan = new List<NhaBep_CatComChuaThanhToan>();
+
+            if (Lop != "")
+            {
+                lstChuaThanhToan= db.NhaBep_CatComChuaThanhToan.Where(s => s.MaDonVi == maC && s.Lop == Lop).ToList();
+            }
+            else
+            {
+                lstChuaThanhToan = db.NhaBep_CatComChuaThanhToan.Where(s => s.MaDonVi == maC ).ToList();
+            }
+
 
 
             /////////////////////////////////////////////////////////////////////////

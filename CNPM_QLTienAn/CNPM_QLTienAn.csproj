@@ -147,6 +147,12 @@
     <Compile Include="GUI\DaiDoi_QuanLyDanhSach.Designer.cs">
       <DependentUpon>DaiDoi_QuanLyDanhSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\NhaBep_LSThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\NhaBep_LSThanhToan.Designer.cs">
+      <DependentUpon>NhaBep_LSThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\NhaBep_QuanLyDanhSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +210,7 @@
     <Compile Include="Models\NhaBep_FindToCreateThanhToan.cs" />
     <Compile Include="Models\NhaBep_LichSuCatComLop.cs" />
     <Compile Include="Models\NhaBep_ListCatCom.cs" />
+    <Compile Include="Models\NhaBep_LSThanhToan.cs" />
     <Compile Include="Models\Object_ThanhToan.cs" />
     <Compile Include="Models\ThanhToan.cs" />
     <Compile Include="Models\TieuChuanAn.cs" />
@@ -254,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DaiDoi_QuanLyDanhSach.resx">
       <DependentUpon>DaiDoi_QuanLyDanhSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\NhaBep_LSThanhToan.resx">
+      <DependentUpon>NhaBep_LSThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\NhaBep_QuanLyDanhSach.resx">
       <DependentUpon>NhaBep_QuanLyDanhSach.cs</DependentUpon>

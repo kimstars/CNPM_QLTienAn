@@ -109,7 +109,7 @@ namespace CNPM_QLTienAn.GUI
             this.xtraTabPage1.Controls.Add(this.txtEditThemTK);
             this.xtraTabPage1.Controls.Add(this.label5);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(496, 219);
+            this.xtraTabPage1.Size = new System.Drawing.Size(496, 202);
             this.xtraTabPage1.Text = "Thêm";
             // 
             // btnThem
@@ -178,9 +178,9 @@ namespace CNPM_QLTienAn.GUI
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(21, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 17);
+            this.label5.Size = new System.Drawing.Size(101, 17);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Tên tài khoản";
+            this.label5.Text = "Tên đăng nhập";
             // 
             // btnXoa
             // 
@@ -361,9 +361,9 @@ namespace CNPM_QLTienAn.GUI
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(16, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 17);
+            this.label10.Size = new System.Drawing.Size(101, 17);
             this.label10.TabIndex = 3;
-            this.label10.Text = "Tên tài khoản";
+            this.label10.Text = "Tên đăng nhập";
             // 
             // groupControl3
             // 
@@ -379,10 +379,10 @@ namespace CNPM_QLTienAn.GUI
             // Thêm
             // 
             this.Thêm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Thêm.Location = new System.Drawing.Point(2, 17);
+            this.Thêm.Location = new System.Drawing.Point(2, 28);
             this.Thêm.Name = "Thêm";
             this.Thêm.SelectedTabPage = this.xtraTabPage1;
-            this.Thêm.Size = new System.Drawing.Size(498, 244);
+            this.Thêm.Size = new System.Drawing.Size(498, 233);
             this.Thêm.TabIndex = 0;
             this.Thêm.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -401,7 +401,7 @@ namespace CNPM_QLTienAn.GUI
             this.xtraTabPage2.Controls.Add(this.txtSuaTK);
             this.xtraTabPage2.Controls.Add(this.label8);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(496, 219);
+            this.xtraTabPage2.Size = new System.Drawing.Size(496, 202);
             this.xtraTabPage2.Text = "Sửa";
             // 
             // txtSuaMaDN
@@ -501,7 +501,7 @@ namespace CNPM_QLTienAn.GUI
             this.xtraTabPage3.Controls.Add(this.txtXoaTK);
             this.xtraTabPage3.Controls.Add(this.label12);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(496, 219);
+            this.xtraTabPage3.Size = new System.Drawing.Size(496, 202);
             this.xtraTabPage3.Text = "Xoá";
             // 
             // label11

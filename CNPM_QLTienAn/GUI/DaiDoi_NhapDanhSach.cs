@@ -44,16 +44,15 @@ namespace CNPM_QLTienAn.GUI
             tbTT_HoTen.Text = "";
             tbTT_Lop.Text = "";
 
-            if((int)DateTime.Today.DayOfWeek < 5 && (int)DateTime.Today.DayOfWeek > 0)
+            if ((int)DateTime.Today.DayOfWeek < 5 && (int)DateTime.Today.DayOfWeek > 0)
             {
                 dtpTT_NgayNghi.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Friday);
                 dtpTT_NgayTra.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Sunday);
-
             }
             else
             {
                 dtpTT_NgayNghi.EditValue = DateTime.Today;
-                dtpTT_NgayTra.EditValue = DateTime.Today.AddDays(1) ;
+                dtpTT_NgayTra.EditValue = DateTime.Today.AddDays(1);
             }
 
             dtpRN_NgayNghi.EditValue = GetNextWeekday(DateTime.Today, DayOfWeek.Saturday);
@@ -74,12 +73,11 @@ namespace CNPM_QLTienAn.GUI
         {
             // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
             //MessageBox.Show(((int)DateTime.Today.DayOfWeek).ToString());
-            if((int)day - (int)start.DayOfWeek > 0)
-            { 
-                int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
-                return start.AddDays(daysToAdd);
-            }
-            else { return start; }
+            if (start.DayOfWeek == 0) return start;
+
+            int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
+            return start.AddDays(daysToAdd);
+
         }
 
 
@@ -150,7 +148,7 @@ namespace CNPM_QLTienAn.GUI
 
             var isDupInDB = db.ChiTietNghis.Where(x => x.NgayNghi == hv.NgayNghi && x.DangKyNghi.MaHocVien == hv.MaHocVien).FirstOrDefault();
 
-            if(isDupInDB != null)
+            if (isDupInDB != null)
             {
                 MessageBox.Show($"Đã tồn tại đăng ký tại ngày {hv.NgayNghi.ToString("dd-MM-yyyy")}", "Thông báo !");
 
@@ -333,6 +331,7 @@ namespace CNPM_QLTienAn.GUI
             if (DateTime.Compare(start, end) > 0)
             {
                 MessageBox.Show("Ngày trả phép phải sau hoặc bằng ngày đăng ký nghỉ !", "Lỗi");
+                dtpTT_NgayTra.EditValue = dtpTT_NgayNghi.DateTime;
                 return false;
             }
             return true;

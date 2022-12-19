@@ -94,7 +94,7 @@ namespace CNPM_QLTienAn.GUI
 
         private void dgvDaXacNhan_View_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            LoadDSChiTietDaXacNhan(Convert.ToInt32(dgvDaXacNhan_View.GetRowCellValue(e.RowHandle, "MaHocVien")));
+            LoadDSChiTietDaXacNhan(Convert.ToInt32(dgvDaXacNhan_View.GetRowCellValue(e.RowHandle, "MaDS")));
         }
     }
 

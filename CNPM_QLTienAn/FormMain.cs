@@ -32,6 +32,7 @@ namespace CNPM_QLTienAn
         NhaBep_QuanLyDanhSach uc10;
         NhaBep_ThanhToan uc11;
         NhaBep_ThongKe uc12;
+        GUI.NhaBep_LSThanhToan uc13;
 
         Admin_DangNhap uc20;
         Admin_HocVien uc21;
@@ -136,21 +137,27 @@ namespace CNPM_QLTienAn
                     AccordionControlElement it10 = new AccordionControlElement(ElementStyle.Item) { Text = "Quản lý danh sách" };
                     AccordionControlElement it11 = new AccordionControlElement(ElementStyle.Item) { Text = "Thanh toán" };
                     AccordionControlElement it12 = new AccordionControlElement(ElementStyle.Item) { Text = "Thống kê" };
-                    accordionControl1.Elements.AddRange(new AccordionControlElement[] { it10, it11, it12 });
+                    AccordionControlElement it13 = new AccordionControlElement(ElementStyle.Item) { Text = "Lịch sử thanh toán" };
+                    accordionControl1.Elements.AddRange(new AccordionControlElement[] { it10, it11, it12, it13 });
+
                     accordionControl1.AllowItemSelection = true;
                     accordionControl1.ExpandAll();
 
                     it10.Click += It10_Click;
                     it11.Click += It11_Click;
                     it12.Click += It12_Click;
+                    it13.Click += It13_Click;
 
                     uc10 = new NhaBep_QuanLyDanhSach();
                     uc11 = new NhaBep_ThanhToan();
                     uc12 = new NhaBep_ThongKe();
+                    uc13 = new GUI.NhaBep_LSThanhToan();
+
                     uc10.Dock = DockStyle.Fill;
                     uc11.Dock = DockStyle.Fill;
                     uc12.Dock = DockStyle.Fill;
-                    fluentDesignFormContainer1.Controls.AddRange(new Control[] { uc10, uc11, uc12 });
+                    uc13.Dock = DockStyle.Fill;
+                    fluentDesignFormContainer1.Controls.AddRange(new Control[] { uc10, uc11, uc12, uc13 });
                     uc10.BringToFront();
                     break;
 
@@ -189,6 +196,11 @@ namespace CNPM_QLTienAn
                 default:
                     break;
             }
+        }
+
+        private void It13_Click(object sender, EventArgs e)
+        {
+            uc13.BringToFront();
         }
 
         private void It24_Click(object sender, EventArgs e)

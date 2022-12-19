@@ -323,6 +323,8 @@ namespace CNPM_QLTienAn.GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgayC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpNgayC.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dtpNgayC.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpNgayC.Size = new System.Drawing.Size(223, 22);
             this.dtpNgayC.TabIndex = 0;
             this.dtpNgayC.EditValueChanged += new System.EventHandler(this.dtpNgayC_EditValueChanged);

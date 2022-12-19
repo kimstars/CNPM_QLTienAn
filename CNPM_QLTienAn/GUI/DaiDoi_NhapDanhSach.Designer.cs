@@ -151,6 +151,10 @@ namespace CNPM_QLTienAn.GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpRN_NgayNghi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpRN_NgayNghi.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dtpRN_NgayNghi.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpRN_NgayNghi.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dtpRN_NgayNghi.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpRN_NgayNghi.Size = new System.Drawing.Size(365, 22);
             this.dtpRN_NgayNghi.TabIndex = 4;
             // 
@@ -288,6 +292,10 @@ namespace CNPM_QLTienAn.GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpTT_NgayTra.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTT_NgayTra.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dtpTT_NgayTra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpTT_NgayTra.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dtpTT_NgayTra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpTT_NgayTra.Size = new System.Drawing.Size(188, 22);
             this.dtpTT_NgayTra.TabIndex = 4;
             this.dtpTT_NgayTra.EditValueChanged += new System.EventHandler(this.dtpTT_NgayTra_EditValueChanged);
@@ -311,6 +319,10 @@ namespace CNPM_QLTienAn.GUI
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpTT_NgayNghi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtpTT_NgayNghi.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.dtpTT_NgayNghi.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.dtpTT_NgayNghi.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.dtpTT_NgayNghi.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.dtpTT_NgayNghi.Size = new System.Drawing.Size(188, 22);
             this.dtpTT_NgayNghi.TabIndex = 4;
             // 
